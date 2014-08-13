@@ -1,0 +1,17 @@
+Language Registration Process
++++++++++++++++++++++++++++++++++++++
+1.praapp/pracore/core/MY_Lang
+Add In this Array
+    var $languages = array(
+		'en' => 'english',
+		'fr' => 'french',
+        'jp' => 'japan'
+	);
+2.praapp/pracore/config/routes
+Add this two new lines with variable change for related language
+example: jp, en, fr etc for japanese, english, french languages respectively.
+    $route['^jp/(.+)$'] = "$1";
+    $route['^jp$'] = $route['default_controller'];
+
+3.modules/commom/views/header_v
+For the new registration of the language menu

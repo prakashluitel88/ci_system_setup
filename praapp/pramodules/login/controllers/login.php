@@ -12,6 +12,7 @@ class Login extends MY_Controller {
         parent::__construct();
         
         $this->lang->load('login/login');
+        $this->load->helper('form');
     }
 
     public function index($msg = NULL) {

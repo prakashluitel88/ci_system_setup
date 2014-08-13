@@ -8,7 +8,10 @@
                     <h3 class="panel-title"><?php echo lang('header'); ?></h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action='<?php echo base_url() . "login/process" ; ?>' method='post' name='process'>
+                    <?php 
+                        $attributes = array('name' => 'process', 'role' => 'form');
+                        echo form_open('login/process'); 
+                    ?>
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="<?php echo lang('username'); ?>" name="username" type="text" autofocus>

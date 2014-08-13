@@ -1,7 +1,7 @@
 <?php
 
-$lang['header'] = "S'il vous plaît Connectez-vous";
-$lang['username'] = "Nom d'utilisateur";
-$lang['password'] = "souviens-toi de moi";
-$lang['remember_me'] = "mot de passe";
-$lang['login'] = "Connexion";
+$lang['header'] = "サインインしてください";
+$lang['username'] = "ユーザー名";
+$lang['password'] = "パスワード";
+$lang['remember_me'] = "パスワード...";
+$lang['login'] = "ログイン";

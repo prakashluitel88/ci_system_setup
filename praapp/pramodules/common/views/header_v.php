@@ -15,6 +15,7 @@
         <?php $this->load->resource('common/css/plugins/metisMenu/metisMenu.min.css'); ?>
         <?php $this->load->resource('common/css/sb-admin-2.css'); ?>
         <?php $this->load->resource('common/font-awesome-4.1.0/css/font-awesome.min.css'); ?>
+        <?php $this->load->resource('common/css/header.css'); ?>
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,3 +28,10 @@
 </head>
 
 <body>
+    <div class="top-menu">
+        <div class="usermenu">
+            <ul class="navbar-nav navbar-right nav">
+                <li class="divider divider-locales"><span></span></li><li class="locales active"><a href="<?php echo $this->session->userdata('core_base_url'); ?>en">en</a></li>
+                <li class="locales last"><a href="<?php echo $this->session->userdata('core_base_url'); ?>fr">fr</a></li></ul>
+        </div>					
+    </div>

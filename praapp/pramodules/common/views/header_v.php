@@ -31,7 +31,7 @@
     <div class="top-menu">
         <div class="usermenu">
             <ul class="navbar-nav navbar-right nav">
-                <li class="divider divider-locales"><span></span></li><li class="locales active"><a href="<?php echo $this->session->userdata('core_base_url'); ?>en">en</a></li>
-                <li class="locales last"><a href="<?php echo $this->session->userdata('core_base_url'); ?>fr">fr</a></li></ul>
+                <li class="divider divider-locales"><span></span></li><li class="locales active"><a href="<?php echo base_url() . 'common/switchLanguage?lang=en&current_url=' . current_url(); ?>" >en</a></li>
+                <li class="locales last"><a href="<?php echo base_url() . 'common/switchLanguage?lang=fr&current_url=' . current_url(); ?>">fr</a></li></ul>
         </div>					
     </div>

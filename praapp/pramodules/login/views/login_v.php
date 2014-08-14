@@ -4,13 +4,16 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
+                <div>
+                    <h3 class="panel-title"><?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error');} ?></h3>
+                </div>
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo lang('header'); ?></h3>
                 </div>
                 <div class="panel-body">
                     <?php 
-                        $attributes = array('name' => 'process', 'role' => 'form');
-                        echo form_open('login/process'); 
+                        $attributes = array('name' => 'process', 'role' => 'form', 'method' => 'post');
+                        echo form_open('login/process', $attributes); 
                     ?>
                         <fieldset>
                             <div class="form-group">

@@ -15,3 +15,6 @@ example: jp, en, fr etc for japanese, english, french languages respectively.
 
 3.modules/commom/views/header_v
 For the new registration of the language menu
+
+4. prapp/pracore/core/MY_Controller
+Apply/Remove condition in the else if condition

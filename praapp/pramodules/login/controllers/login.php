@@ -15,11 +15,10 @@ class Login extends MY_Controller {
         $this->load->helper('form');
     }
 
-    public function index($msg = NULL) {
+    public function index() {
         // Load our view to be displayed
         // to the user
-        $data['msg'] = $msg;
-        $this->load->view('login_v', $data);
+        $this->load->view('login_v');
     }
 
     public function process() {
@@ -31,7 +30,8 @@ class Login extends MY_Controller {
         if (!$result) {
             // If user did not validate, then show them login page again
             $msg = '<font color=red>Invalid username and/or password.</font><br />';
-            $this->index($msg);
+            $this->session->set_flashdata('error', $this->lang->line('login_error'));
+            $this->index();
         } else {
             // If user did validate, 
             // Send them to members area

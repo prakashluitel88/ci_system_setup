@@ -15,6 +15,8 @@ class MY_Controller extends CI_Controller {
         // Base Url Modification on the basis of language
         if ($language == '' || $language == 'english') {
             $this->config->set_item('base_url', $this->CI->config->config['base_url'] . 'en/');
+        } elseif($language == 'japan') {
+            $this->config->set_item('base_url', $this->CI->config->config['base_url'] . 'jp/');
         } else {
             $this->config->set_item('base_url', $this->CI->config->config['base_url'] . 'fr/');
         }

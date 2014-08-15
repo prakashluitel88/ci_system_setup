@@ -7,16 +7,15 @@ if (!defined('BASEPATH'))
  * This is only viewable to those members that are logged in
  */
 
-class Home extends MY_Controller {
+class Dash extends MY_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->check_isvalidated();
+        //$this->check_isvalidated();
     }
 
     public function index() {
-        // If the user is validated, then this function will run
-        echo 'Congratulations, you are logged in.';
+        $this->load->view('dash_v');
     }
 
     private function check_isvalidated() {

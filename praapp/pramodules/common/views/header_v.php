@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-    <style>
+    <title>Admin Theme</title>
+    <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
         <?php $this->load->resource('common/css/bootstrap.min.css'); ?>
         <?php $this->load->resource('common/css/plugins/metisMenu/metisMenu.min.css'); ?>
         <?php $this->load->resource('common/css/sb-admin-2.css'); ?>
-        <?php $this->load->resource('common/font-awesome-4.1.0/css/font-awesome.min.css'); ?>
         <?php $this->load->resource('common/css/header.css'); ?>
+        <?php $this->load->resource('common/css/plugins/timeline.css'); ?>
+        <?php $this->load->resource('common/css/plugins/morris.css'); ?>
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,12 +30,3 @@
 </head>
 
 <body>
-    <?php $lang = $this->uri->segment(1); ?>
-    <div class="top-menu">
-        <div class="usermenu">
-            <ul class="navbar-top-links navbar-right nav">
-                <li <?php if ($lang == 'en') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales"><a href="<?php echo base_url() . 'common/switchLanguage?lang=en&current_url=' . current_url(); ?>" >en</a></li>
-                <li <?php if ($lang == 'jp') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales"><a href="<?php echo base_url() . 'common/switchLanguage?lang=jp&current_url=' . current_url(); ?>" >jp</a></li>
-                <li <?php if ($lang == 'fr') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales last"><a href="<?php echo base_url() . 'common/switchLanguage?lang=fr&current_url=' . current_url(); ?>">fr</a></li></ul>
-        </div>					
-    </div>

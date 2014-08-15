@@ -22,6 +22,7 @@ class Login extends MY_Controller {
     }
 
     public function process() {
+        redirect('home');
         // Load the model
         $this->load->model('login_m');
         // Validate the user can login

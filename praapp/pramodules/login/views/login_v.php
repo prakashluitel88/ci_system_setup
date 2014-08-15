@@ -1,4 +1,4 @@
-<?php $this->load->view('common/header_v'); ?>
+<?php $this->load->view('common/login_header_v'); ?>
 
 <div class="container">
     <div class="row">
@@ -39,7 +39,7 @@
 
 
 
-<?php $this->load->view('common/footer_v'); ?><!-- Common Resources load -->
+<?php $this->load->view('common/login_footer_v'); ?><!-- Common Resources load -->
 <?php $this->load->resource('login/login_js'); ?><!-- Page Specific Resources load -->
-<?php $this->load->view('common/footer_html_v'); ?><!-- End of body, html tags  -->
+<?php $this->load->view('common/login_footer_html_v'); ?><!-- End of body, html tags  -->
 

@@ -15,7 +15,10 @@ class Dash extends MY_Controller {
     }
 
     public function index() {
-        $this->load->view('dash_v');
+        $data['page_title'] = 'Dashboard';
+        $data['page_view'] = 'dash/dash_v';
+        
+        $this->load->view('common/common_v', $data);
     }
 
     private function check_isvalidated() {

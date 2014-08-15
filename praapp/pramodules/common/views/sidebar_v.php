@@ -13,7 +13,7 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a class="active" href="<?php echo base_url(); ?>dash"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -28,22 +28,22 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-users fa-fw"></i> Manage<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Second Level Item</a>
+                        <a href="#">Group</a>
                     </li>
                     <li>
-                        <a href="#">Second Level Item</a>
+                        <a href="#">Role</a>
                     </li>
                     <li>
-                        <a href="#">Third Level <span class="fa arrow"></span></a>
+                        <a href="#">User<span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#">Profile</a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#">Relation</a>
                             </li>
                             <li>
                                 <a href="#">Third Level Item</a>

@@ -27,32 +27,17 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
-            <li>
+            <li class="<?php echo $this->uri->segment(2) == 'user' ? 'active' : ''; ?>">
                 <a href="#"><i class="fa fa-users fa-fw"></i> Manage<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="<?php echo base_url(); ?>user/group">Group</a>
                     </li>
                     <li>
-                        <a href="#"> Role</a>
+                        <a href="<?php echo base_url(); ?>user/role"> Role</a>
                     </li>
                     <li>
-                        <a href="#"> User<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#"> Profile</a>
-                            </li>
-                            <li>
-                                <a href="#"> Relation</a>
-                            </li>
-                            <li>
-                                <a href="#"> Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#"> Third Level Item</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-third-level -->
+                        <a href="<?php echo base_url(); ?>user/user"> User</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

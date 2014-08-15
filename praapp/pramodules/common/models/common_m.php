@@ -8,7 +8,7 @@ if (!defined('BASEPATH'))
  *
  * @author crossover
  */
-class Common_model extends CI_Model {
+class Common_m extends CI_Model {
 
     public function __construct() {
         parent::__construct();

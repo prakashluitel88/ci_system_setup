@@ -6,11 +6,11 @@
         <div class="col-lg-6">
             <form role="form" id="form_group" method="post">
                 <div class="form-group">
-                    <input name="g_name" placeholder="Enter Group Name" class="form-control">
+                    <input name="name" placeholder="Enter Group Name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Group Description</label>
-                    <textarea name="g_description" rows="3" class="form-control"></textarea>
+                    <textarea name="description" rows="3" class="form-control"></textarea>
                 </div>
                 <button onclick="return false;" id="submit" class="btn btn-default" type="submit">Submit Button</button>
                 <button id="reset" class="btn btn-default" type="reset">Reset Button</button>

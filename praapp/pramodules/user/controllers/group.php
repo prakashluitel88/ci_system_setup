@@ -11,6 +11,8 @@ class Group extends MY_Controller {
 
     function __construct() {
         parent::__construct();
+        
+        $this->load->model('user/group_m');
         //$this->check_isvalidated();
     }
 
@@ -28,9 +30,13 @@ class Group extends MY_Controller {
     }
     
     public function create() {
-        print_r($_POST); die;
-        //echo $this->input->post(id); die;
-        return true;
+        $data = $_POST;
+        
+        if ($this->group_m->create($data)) {
+            return TRUE;
+        }
+        
+        return FALSE;
     }
 
 }

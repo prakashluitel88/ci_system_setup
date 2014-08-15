@@ -31,25 +31,25 @@
                 <a href="#"><i class="fa fa-users fa-fw"></i> Manage<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">Group</a>
+                        <a href="<?php echo base_url(); ?>user/group">Group</a>
                     </li>
                     <li>
-                        <a href="#">Role</a>
+                        <a href="#"> Role</a>
                     </li>
                     <li>
-                        <a href="#">User<span class="fa arrow"></span></a>
+                        <a href="#"> User<span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#">Profile</a>
+                                <a href="#"> Profile</a>
                             </li>
                             <li>
-                                <a href="#">Relation</a>
+                                <a href="#"> Relation</a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#"> Third Level Item</a>
                             </li>
                             <li>
-                                <a href="#">Third Level Item</a>
+                                <a href="#"> Third Level Item</a>
                             </li>
                         </ul>
                         <!-- /.nav-third-level -->

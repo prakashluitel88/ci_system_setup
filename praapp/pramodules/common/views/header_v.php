@@ -14,11 +14,15 @@
     <style type="text/css">
         <?php $this->load->resource('common/css/bootstrap.min.css'); ?>
         <?php $this->load->resource('common/css/plugins/metisMenu/metisMenu.min.css'); ?>
+        <?php $this->load->resource('common/css/plugins/dataTables.bootstrap.css'); ?>
         <?php $this->load->resource('common/css/sb-admin-2.css'); ?>
         <?php $this->load->resource('common/css/header.css'); ?>
         <?php $this->load->resource('common/css/plugins/timeline.css'); ?>
         <?php $this->load->resource('common/css/plugins/morris.css'); ?>
     </style>
+    <script type="text/javascript">
+        <?php $this->load->resource('common/js/jquery-1.11.0.js'); ?>
+    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

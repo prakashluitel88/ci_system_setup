@@ -28,7 +28,6 @@ class Group extends MY_Controller {
     }
     
     public function create() {
-        die('this');
         print_r($_POST); die;
         //echo $this->input->post(id); die;
         return true;

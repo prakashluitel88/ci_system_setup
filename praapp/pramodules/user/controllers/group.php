@@ -1,7 +1,7 @@
 <?php
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+//if (!defined('BASEPATH'))
+    //exit('No direct script access allowed');
 /* Author: Prakash Luitel
  * Description: Home controller class
  * This is only viewable to those members that are logged in
@@ -25,6 +25,12 @@ class Group extends MY_Controller {
         if (!$this->session->userdata('validated')) {
             redirect('login');
         }
+    }
+    
+    public function create() {
+        print_r($_POST); die;
+        //echo $this->input->post(id); die;
+        return true;
     }
 
 }

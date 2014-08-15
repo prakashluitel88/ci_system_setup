@@ -1,8 +1,24 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        DataTables Advanced Tables
+        <button id="group" class="btn btn-success" type="submit">Create Group</button>
     </div>
-    <!-- /.panel-heading -->
+    <div id="group_form" class="panel-body" style="display: none;">
+        <div class="col-lg-6">
+            <form role="form" id="form_group" method="post">
+                <div class="form-group">
+                    <input name="g_name" placeholder="Enter Group Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Group Description</label>
+                    <textarea name="g_description" rows="3" class="form-control"></textarea>
+                </div>
+                <button onclick="return false;" id="submit" class="btn btn-default" type="submit">Submit Button</button>
+                <button id="reset" class="btn btn-default" type="reset">Reset Button</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-group">
@@ -423,4 +439,5 @@
     <!-- /.panel-body -->
 </div>
 
-<?php $this->load->resource('user/group_r'); ?>
+<?php $this->load->resource('user/js/group_r'); ?>
+<?php $this->load->resource('user/css/group_r'); ?>

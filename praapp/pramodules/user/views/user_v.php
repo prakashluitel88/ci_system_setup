@@ -1,8 +1,118 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        DataTables Advanced Tables
+        <button class="btn btn-success" type="submit">Create User</button>
     </div>
-    <!-- /.panel-heading -->
+    <div class="panel-body" style="display: none;">
+        <div class="col-lg-6">
+            <form role="form">
+                <div class="form-group">
+                    <label>Text Input</label>
+                    <input class="form-control">
+                    <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="form-group">
+                    <label>Text Input with Placeholder</label>
+                    <input placeholder="Enter text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Static Control</label>
+                    <p class="form-control-static">email@example.com</p>
+                </div>
+                <div class="form-group">
+                    <label>File input</label>
+                    <input type="file">
+                </div>
+                <div class="form-group">
+                    <label>Text area</label>
+                    <textarea rows="3" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Checkboxes</label>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">Checkbox 1
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">Checkbox 2
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">Checkbox 3
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Inline Checkboxes</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">1
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">2
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">3
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Radio Buttons</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">Radio 1
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">Radio 2
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" value="option3" id="optionsRadios3" name="optionsRadios">Radio 3
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Inline Radio Buttons</label>
+                    <label class="radio-inline">
+                        <input type="radio" checked="" value="option1" id="optionsRadiosInline1" name="optionsRadiosInline">1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="option2" id="optionsRadiosInline2" name="optionsRadiosInline">2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" value="option3" id="optionsRadiosInline3" name="optionsRadiosInline">3
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Selects</label>
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Multiple Selects</label>
+                    <select class="form-control" multiple="">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button class="btn btn-default" type="submit">Submit Button</button>
+                <button class="btn btn-default" type="reset">Reset Button</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-body">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-user">
@@ -423,4 +533,4 @@
     <!-- /.panel-body -->
 </div>
 
-<?php $this->load->resource('user/user_r'); ?>
+<?php $this->load->resource('user/js/user_r'); ?>

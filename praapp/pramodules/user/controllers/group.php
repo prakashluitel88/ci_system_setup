@@ -12,13 +12,15 @@ class Group extends MY_Controller {
     function __construct() {
         parent::__construct();
         
-        $this->load->model('user/group_m');
+        $this->load->model(array('user/group_m', 'common/common_m'));
         //$this->check_isvalidated();
     }
 
     public function index() {
         $data['page_title'] = 'Group';
         $data['page_view'] = 'user/group_v';
+        
+        $data['groups'] = $this->common_m->getAll('prak_group');
         
         $this->load->view('common/common_v', $data);
     }

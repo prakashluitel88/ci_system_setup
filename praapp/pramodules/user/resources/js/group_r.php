@@ -82,15 +82,24 @@
                 alert('Group Added Successfully!');
                 $( '#group_form' ).hide();
                 $( 'button#group' ).html('Create Group');
-                // Reset form
-                $('form[name=form_group]').clearForm();
-                $('form[name=form_group] i.glyphicon').css( 'display', 'none' );
-                $('form div.form-group').removeClass('has-success');
+                resetForm();
             },
             error: function() {
                 alert('Error in Adding Group!');
             }
         });
+    });
+    
+    function resetForm() {
+        // Reset form
+        $('form[name=form_group]').clearForm();
+        $('form[name=form_group] i.glyphicon').css( 'display', 'none' );
+        $('form div.form-group').removeClass('has-success');
+        $( 'form button[type=submit]' ).attr('disabled', 'disabled');
+    }
+    
+    $( 'button[type=reset]' ).click(function() {
+        resetForm();
     });
     
     // Clear Form plugin

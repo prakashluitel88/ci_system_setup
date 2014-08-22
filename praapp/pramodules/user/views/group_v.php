@@ -1,19 +1,19 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <button id="group" class="btn btn-success" type="submit">Create Group</button>
+        <button id="group" class="btn btn-success">Create Group</button>
     </div>
     <div id="group_form" class="panel-body" style="display: none;">
         <div class="col-lg-6">
-            <form role="form" id="form_group" method="post">
+            <form name="form_group" role="form" id="form_group" method="post">
                 <div class="form-group">
-                    <input name="name" placeholder="Enter Group Name" class="form-control">
+                    <input name="name" placeholder="Enter Group Name..." class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Group Description</label>
-                    <textarea name="description" rows="3" class="form-control"></textarea>
+                    <textarea placeholder="Enter Group Description..." name="description" rows="3" class="form-control"></textarea>
                 </div>
-                <button onclick="return false;" id="submit" class="btn btn-default" type="submit">Submit Button</button>
-                <button id="reset" class="btn btn-default" type="reset">Reset Button</button>
+                <!--<button onclick="return false;" id="submit" class="btn btn-success" type="submit">Submit</button>-->
+                <button onclick="return false;" type="submit" class="btn btn-success">Sign up</button>
+                <button id="reset" class="btn btn-success" type="reset">Reset</button>
             </form>
         </div>
     </div>

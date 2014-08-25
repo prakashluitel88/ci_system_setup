@@ -20,6 +20,7 @@ class Role extends MY_Controller {
         $data['page_title'] = 'Role';
         $data['page_view'] = 'user/role_v';
         
+        $data['groups'] = $this->common_m->getAll('prak_group');        
         $data['roles'] = $this->common_m->getAll('prak_role');
         
         $this->load->view('common/common_v', $data);
@@ -33,10 +34,10 @@ class Role extends MY_Controller {
     
     public function create() {
         $data = $_POST;
-        
-        if ($this->group_m->create($data)) {
+                
+        if ($this->role_m->create($data)) {
             return TRUE;
-        }
+        }        
         
         return FALSE;
     }

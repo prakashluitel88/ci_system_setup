@@ -17,7 +17,6 @@ class Common_m extends CI_Model {
     }
 
     function insert($table, $array) {
-
         $this->db->set($array);
 
         $this->db->insert($table);

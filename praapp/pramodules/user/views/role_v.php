@@ -6,6 +6,15 @@
         <div class="col-lg-6">
             <form name="form_role" role="form" id="form_role" method="post">
                 <div class="form-group">
+                    <select name="group_id" class="form-control">
+                        <option>Choose Group</option>
+                        <?php foreach ($groups as $group) { ?>
+                        
+                        <option value="<?php echo $group->id;?>"><?php echo $group->name;?></option>                        
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <input name="name" placeholder="Enter Role Name..." class="form-control">
                 </div>
                 <div class="form-group">
@@ -26,16 +35,18 @@
                     <tr>
                         <th>SN.</th>
                         <th>Name</th>
+                        <th>Group</th>
                         <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $sn = 1; ?>
-                    <?php foreach ($groups as $group) { ?>
+                    <?php foreach ($roles as $role) { ?>
                         <tr class="odd gradeX">
                             <td><?php echo $sn++; ?></td>
-                            <td><?php echo $group->name; ?></td>
-                            <td><?php echo $group->description; ?></td>
+                            <td><?php echo $role->name; ?></td>
+                            <td><?php echo $this->common_m->getById('prak_group', 'id', $role->group_id,'name')->name; ?></td>
+                            <td><?php echo $role->description; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

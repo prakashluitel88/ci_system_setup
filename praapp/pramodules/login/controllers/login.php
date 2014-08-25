@@ -18,12 +18,6 @@ class Login extends MY_Controller {
     public function index() {
         // Load our view to be displayed
         // to the user
-        $this->load->view('login_v_curl');
-    }
-
-    public function index_old() {
-        // Load our view to be displayed
-        // to the user
         $this->load->view('login_v');
     }
 

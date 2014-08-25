@@ -18,7 +18,7 @@ class Browsesimulator extends MY_Controller {
     public function index() {
         die('this');
         curl_init();
-        $ch = curl_init("http://localhost/ci_system_setup");
+        $ch = curl_init("http://localhost/ci_system_setup/");
         //$ch = curl_init("http://crossovernepal.com/");
         
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

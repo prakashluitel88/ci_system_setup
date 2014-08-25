@@ -1,20 +1,20 @@
 <script>
-    $(document).ready(function() {
+    $( document ).ready( function(  ) {
         // Clear form on each page load
-        $('form[name=form_group]').clearForm();
+        $( 'form[name=form_group]' ).clearForm(  );
         // Datatables initialization
-        $( '#dataTables-group' ).dataTable();
+        $(  '#dataTables-group'  ).dataTable(  );
         
         // Form Validation Plugin declaration
-        $('#form_group')
-            .on('init.form.bv', function(e, data) {
-                data.bv.disableSubmitButtons(true);
-            })
-            .on('success.field.bv', function(e, data) {
-                var isValid = data.bv.isValid();
-                data.bv.disableSubmitButtons(!isValid);
-            })
-            .bootstrapValidator({
+        $( '#form_group' )
+            .on( 'init.form.bv', function( e, data ) {
+                data.bv.disableSubmitButtons( true );
+            } )
+            .on( 'success.field.bv', function( e, data ) {
+                var isValid = data.bv.isValid(  );
+                data.bv.disableSubmitButtons( !isValid );
+            } )
+            .bootstrapValidator( {
                 message: 'This value is not valid',
                 feedbackIcons: {
                     valid: 'glyphicon glyphicon-ok',
@@ -52,71 +52,71 @@
                         }
                     }
                 }
-            })
-            .on('success.form.bv', function(e) {
-                e.preventDefault();
-                var $form = $(e.target),
-                bv    = $form.data('bootstrapValidator');
-                $.post($form.attr('action'), $form.serialize(), function(result) {
-                    $('#alertBox').removeClass('hide').alert();
-                }, 'json');
-            });
-    });
+            } )
+            .on( 'success.form.bv', function( e ) {
+                e.preventDefault(  );
+                var $form = $( e.target ),
+                bv    = $form.data( 'bootstrapValidator' );
+                $.post( $form.attr( 'action' ), $form.serialize(  ), function( result ) {
+                    $( '#alertBox' ).removeClass( 'hide' ).alert(  );
+                }, 'json' );
+            } );
+    } );
     
     // Hide / Show Create Group Form
-    $( 'button#group' ).click(function() {
-        if ($( 'button#group' ).html() == 'Hide Form') {
-            $( '#group_form' ).css( 'display', 'none' );
-            $( 'button#group' ).html('Create Group');
-        } else if ($( 'button#group' ).html() == 'Create Group') {
-            $( '#group_form' ).css( 'display', 'block' );
-            $( 'button#group' ).html('Hide Form');
+    $(  'button#group'  ).click( function(  ) {
+        if ( $(  'button#group'  ).html(  ) == 'Hide Form' ) {
+            $(  '#group_form'  ).css(  'display', 'none'  );
+            $(  'button#group'  ).html( 'Create Group' );
+        } else if ( $(  'button#group'  ).html(  ) == 'Create Group' ) {
+            $(  '#group_form'  ).css(  'display', 'block'  );
+            $(  'button#group'  ).html( 'Hide Form' );
         }
-    });
+    } );
     
     // Ajax Call to insert data
-    $( 'button[type=submit]' ).click(function() {
-        $.ajax({
+    $(  'button[type=submit]'  ).click( function(  ) {
+        $.ajax( {
             type: "POST",
-            url: '<?php echo base_url(); ?>user/group/create',
-            data: $("#form_group").serialize(),
-            success: function() {
-                alert('Group Added Successfully!');
-                $( '#group_form' ).hide();
-                $( 'button#group' ).html('Create Group');
-                resetForm();
+            url: '<?php echo base_url(  ); ?>user/group/create',
+            data: $( "#form_group" ).serialize(  ),
+            success: function(  ) {
+                alert( 'Group Added Successfully!' );
+                $(  '#group_form'  ).hide(  );
+                $(  'button#group'  ).html( 'Create Group' );
+                resetForm(  );
             },
-            error: function() {
-                alert('Error in Adding Group!');
+            error: function(  ) {
+                alert( 'Error in Adding Group!' );
             }
-        });
-    });
+        } );
+    } );
     
-    function resetForm() {
+    function resetForm(  ) {
         // Reset form
-        $('form[name=form_group]').clearForm();
-        $('form[name=form_group] i.glyphicon').css( 'display', 'none' );
-        $('form div.form-group').removeClass('has-success');
-        $( 'form button[type=submit]' ).attr('disabled', 'disabled');
+        $( 'form[name=form_group]' ).clearForm(  );
+        $( 'form[name=form_group] i.glyphicon' ).css(  'display', 'none'  );
+        $( 'form div.form-group' ).removeClass( 'has-success' );
+        $(  'form button[type=submit]'  ).attr( 'disabled', 'disabled' );
     }
     
-    $( 'button[type=reset]' ).click(function() {
-        resetForm();
-    });
+    $(  'button[type=reset]'  ).click( function(  ) {
+        resetForm(  );
+    } );
     
     // Clear Form plugin
-    $.fn.clearForm = function() {
-        return this.each(function() {
-            var type = this.type, tag = this.tagName.toLowerCase();
-            if (tag == 'form')
-                return $(':input', this).clearForm();
-            if (type == 'text' || type == 'password' || tag == 'textarea')
+    $.fn.clearForm = function(  ) {
+        return this.each( function(  ) {
+            var type = this.type, tag = this.tagName.toLowerCase(  );
+            if ( tag == 'form' )
+                return $( ':input', this ).clearForm(  );
+            if ( type == 'text' || type == 'password' || tag == 'textarea' )
                 this.value = '';
-            else if (type == 'checkbox' || type == 'radio')
+            else if ( type == 'checkbox' || type == 'radio' )
                 this.checked = false;
-            else if (tag == 'select')
+            else if ( tag == 'select' )
                 this.selectedIndex = -1;
-        });
+        } );
     };
     
     

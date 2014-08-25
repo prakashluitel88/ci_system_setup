@@ -1,5 +1,7 @@
 <script>
     $(document).ready(function() {
+        // Clear form on each page load
+        $('form[name=form_group]').clearForm();
         // Datatables initialization
         $( '#dataTables-group' ).dataTable();
         

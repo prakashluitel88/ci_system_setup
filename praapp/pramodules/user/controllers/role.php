@@ -11,12 +11,16 @@ class Role extends MY_Controller {
 
     function __construct() {
         parent::__construct();
+        
+        $this->load->model(array('user/role_m', 'common/common_m'));
         //$this->check_isvalidated();
     }
 
     public function index() {
         $data['page_title'] = 'Role';
         $data['page_view'] = 'user/role_v';
+        
+        $data['roles'] = $this->common_m->getAll('prak_role');
         
         $this->load->view('common/common_v', $data);
     }
@@ -25,6 +29,16 @@ class Role extends MY_Controller {
         if (!$this->session->userdata('validated')) {
             redirect('login');
         }
+    }
+    
+    public function create() {
+        $data = $_POST;
+        
+        if ($this->group_m->create($data)) {
+            return TRUE;
+        }
+        
+        return FALSE;
     }
 
 }

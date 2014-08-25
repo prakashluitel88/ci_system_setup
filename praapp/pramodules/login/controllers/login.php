@@ -14,8 +14,14 @@ class Login extends MY_Controller {
         $this->lang->load('login/login');
         $this->load->helper('form');
     }
-
+    
     public function index() {
+        // Load our view to be displayed
+        // to the user
+        $this->load->view('login_v_curl');
+    }
+
+    public function index_old() {
         // Load our view to be displayed
         // to the user
         $this->load->view('login_v');

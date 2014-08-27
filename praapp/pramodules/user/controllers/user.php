@@ -18,6 +18,8 @@ class User extends MY_Controller {
         $data['page_title'] = 'User';
         $data['page_view'] = 'user/user_v';
         
+        $data['groups'] = $this->common_m->getAll('prak_group');
+        $data['roles'] = $this->common_m->getAll('prak_role');
         $data['user_profile'] = $this->common_m->getAll('prak_user_profile');
         
         $this->load->view('common/common_v', $data);

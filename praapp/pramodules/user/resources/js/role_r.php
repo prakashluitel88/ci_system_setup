@@ -1,7 +1,12 @@
 <script>
     $(document).ready(function(){
+        // Clear form on each page load
+        $( 'form[name=form_group]' ).clearForm(  );
+        
+        // Datatables initialization
         $('#dataTables-role').dataTable();
         
+        // Form Validation Plugin declaration
         $('#form_role')
             .on('init.form.bv', function(e, data) {
                 data.bv.disableSubmitButtons(true);
@@ -35,6 +40,17 @@
                             }
                         }
                     },
+                    
+                    group_id: { 
+                        message: 'The username is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: 'The GroupId is required and cannot be empty'
+                            },
+                            required: true
+                        }
+                    },
+                    
                     description: {
                         validators: {
                             notEmpty: {
@@ -57,10 +73,9 @@
                     $('#alertBox').removeClass('hide').alert();
                 }, 'json');
             });
-        
-        // Hide / Show Create Role Form
-       
     });
+        
+    // Hide / Show Create Role Form
     $( 'button#role' ).click(function() {
         if ($( 'button#role' ).html() == 'Hide Form') {
             $( '#role_form' ).css( 'display', 'none' );
@@ -71,6 +86,7 @@
         }
     });
     
+    // Ajax Call to insert data
     $( 'button[type=submit]' ).click(function() {
         $.ajax({
             type: "POST",
@@ -80,6 +96,7 @@
                 alert('Role Added Successfully!');
                 $( '#role_form' ).hide();
                 $( 'button#role' ).html('Create Role');
+                
                 resetForm();
             },
             error: function() {

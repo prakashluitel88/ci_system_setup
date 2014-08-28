@@ -6,7 +6,7 @@
         <div class="col-lg-6">
             <form name="form_role" role="form" id="form_role" method="post">
                 <div class="form-group">
-                    <select name="group_id" class="form-control">
+                    <select name="group_id" id="group_id" class="form-control">
                         <option>Choose Group</option>
                         <?php foreach ($groups as $group) { ?>
                         

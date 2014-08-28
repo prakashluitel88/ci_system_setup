@@ -34,7 +34,8 @@ class Role extends MY_Controller {
     
     public function create() {
         $data = $_POST;
-                
+        $insert_id = $this->common_m->insert('prak_role', $data);
+        
         if ($this->role_m->create($data)) {
             return TRUE;
         }        

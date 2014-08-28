@@ -20,7 +20,7 @@ class Common_m extends CI_Model {
         $this->db->set($array);
 
         $this->db->insert($table);
-
+        
         return $this->db->insert_id();
     }
 
@@ -106,8 +106,8 @@ class Common_m extends CI_Model {
         return $query->result();
     }
 
-    function getAll_array($table, $orderBy = NULL, $where = NULL, $select = NULL, $group_by = NULL) {
-
+    function getAll_array($table, $orderBy = NULL, $where = NULL, $value= NULL, $select = NULL, $group_by = NULL) {
+        
         if ($select) {
 
             $this->db->select($select);

@@ -33,7 +33,6 @@ class Group extends MY_Controller {
     
     public function create() {
         $data = $_POST;
-        $insert = $this->common_m->insert('prak_group', $data);
         
         if ($this->group_m->create($data)) {
             return TRUE;

@@ -12,6 +12,7 @@ class Dash extends MY_Controller {
     function __construct() {
         parent::__construct();
         //$this->check_isvalidated();
+        $this->lang->load('dash/dash');
     }
 
     public function index() {

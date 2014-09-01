@@ -1,13 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <button id="role" class="btn btn-success">Create Role</button>
+        <button id="role" class="btn btn-success"><?php echo lang('add_role');?></button>
     </div>
     <div id="role_form" class="panel-body" style="display: none;">
         <div class="col-lg-6">
             <form name="form_role" role="form" id="form_role" method="post">
                 <div class="form-group">
                     <select name="group_id" id="group_id" class="form-control">
-                        <option>Choose Group</option>
+                        <option><?php echo lang('choose_group');?></option>
                         <?php foreach ($groups as $group) { ?>
                         
                         <option value="<?php echo $group->id;?>"><?php echo $group->name;?></option>                        
@@ -15,14 +15,14 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input name="name" placeholder="Enter Role Name..." class="form-control">
+                    <input name="name" placeholder="<?php echo lang('role_placeholder_name');?>" class="form-control">
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="Enter Role Description..." name="description" rows="3" class="form-control"></textarea>
+                    <textarea placeholder="<?php echo lang('role_placeholder_desc');?>" name="description" rows="3" class="form-control"></textarea>
                 </div>
                 <!--<button onclick="return false;" id="submit" class="btn btn-success" type="submit">Submit</button>-->
-                <button onclick="return false;" type="submit" class="btn btn-success">Sign up</button>
-                <button id="reset" class="btn btn-success" type="reset">Reset</button>
+                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('sign_up');?></button>
+                <button id="reset" class="btn btn-success" type="reset"><?php echo lang('reset');?></button>
             </form>
         </div>
     </div>
@@ -33,10 +33,10 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-role">
                 <thead>
                     <tr>
-                        <th>SN.</th>
-                        <th>Name</th>
-                        <th>Group</th>
-                        <th>Description</th>
+                        <th><?php echo lang('sn');?></th>
+                        <th><?php echo lang('name');?></th>
+                        <th><?php echo lang('group');?></th>
+                        <th><?php echo lang('description');?></th>
                     </tr>
                 </thead>
                 <tbody>

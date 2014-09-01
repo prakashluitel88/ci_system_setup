@@ -45,8 +45,8 @@
                     </div>
                 </div>               
                 <!--<button onclick="return false;" id="submit" class="btn btn-success" type="submit">Submit</button>-->
-                <button onclick="return false;" type="submit" class="btn btn-success">Sign up</button>
-                <button id="reset" class="btn btn-success" type="reset">Reset</button>
+                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('sign_up');?></button>
+                <button id="reset" class="btn btn-success" type="reset"><?php echo lang('reset');?></button>
             </form>
             
         </div>

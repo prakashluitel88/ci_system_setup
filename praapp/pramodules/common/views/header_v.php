@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Theme</title>
+    <title><?php echo lang('dashboard_header');?></title>
     <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/bower-form-validate/dist/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css">

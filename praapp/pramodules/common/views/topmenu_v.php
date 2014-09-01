@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Admin System</a>
+        <a class="navbar-brand" href="index.html"><?php echo lang('dashboard_header');?></a>
     </div>
     <!-- /.navbar-header -->
 
@@ -207,12 +207,12 @@
                 <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                <li><a href="#"><i class="fa fa-user fa-fw"></i><?php echo lang('user_profile');?></a>
                 </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i><?php echo lang('setting');?></a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i><?php echo lang('logout');?> </a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->

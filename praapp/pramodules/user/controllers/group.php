@@ -12,6 +12,8 @@ class Group extends MY_Controller {
     function __construct() {
         parent::__construct();
         
+        $this->lang->load('dash/dash');
+        $this->lang->load('group/group');
         $this->load->model(array('user/group_m', 'common/common_m'));
         //$this->check_isvalidated();
     }

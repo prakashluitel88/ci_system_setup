@@ -11,7 +11,9 @@ class User extends MY_Controller {
 
     function __construct() {
         parent::__construct();
-         $this->load->model(array('user/user_m', 'common/common_m'));
+        
+        $this->lang->load('dash/dash');
+        $this->load->model(array('user/user_m', 'common/common_m'));
         //$this->check_isvalidated();
     }
 

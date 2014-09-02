@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label>Select Group</label>
                     <select name="group_id" id="group_id" class="form-control" onchange="listRole(this.value);">
-                        <option value="choose_group">Choose Group</option>
+                        <option value="choose_group"><?php echo lang('choose_group');?></option>
                         <?php foreach ($groups as $group) { ?>
                         
                         <option value="<?php echo $group->id;?>" ><?php echo $group->name;?></option>                        
@@ -22,7 +22,7 @@
                     <span id="role_list">
                         <label>Select Role</label>
                         <select name="role_id" id="role_id" class="form-control">
-                            <option value="choose_role">Choose Role</option>
+                            <option value="choose_role"><?php echo lang('choose_role');?></option>
                             <?php if($role) { foreach ($role as $row) {?>
 
                             <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>                        
@@ -32,7 +32,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <input name="username" placeholder="Enter Username ..." class="form-control">
+                    <input name="username" placeholder="<?php echo lang('enter_username');?>" class="form-control">
                 </div>
                 <div class="form-group">
                     <input name="password" type="password" placeholder="Enter Password..." class="form-control">

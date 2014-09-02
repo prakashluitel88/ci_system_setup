@@ -12,8 +12,7 @@ class Role extends MY_Controller {
     function __construct() {
         parent::__construct();
         
-        $this->lang->load('dash/dash');
-        $this->lang->load('role/role');
+        $this->lang->load(array('dash/dash', 'group/group', 'role/role'));
         $this->load->model(array('user/role_m', 'common/common_m'));
         //$this->check_isvalidated();
     }

@@ -95,7 +95,7 @@
     function listRole(id){
         var base_url = "<?php echo base_url();?>";
         
-        $.post(base_url+'user/roleList',{id:id},function(data){
+        $.post(base_url+'user/roleList',{id:id},function(data){alert(data);
 					  $("#role_list").html(data);					  
 					});       
         
@@ -110,7 +110,7 @@
         } else if ($( 'button#user' ).html() == 'Create User') {
             $('select#group_id').val('choose_group');
             $('select#role_id').val('choose_role');
-              $('select#role_id').attr('disabled','disabled');
+            $('select#role_id').attr('disabled','disabled');
             $( '#user_form' ).css( 'display', 'block' );
             $( 'button#user' ).html('Hide Form');
         }

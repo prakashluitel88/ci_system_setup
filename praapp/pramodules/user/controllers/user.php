@@ -12,7 +12,7 @@ class User extends MY_Controller {
     function __construct() {
         parent::__construct();
         
-        $this->lang->load('dash/dash');
+        $this->lang->load(array('dash/dash', 'group/group', 'role/role','user/user'));
         $this->load->model(array('user/user_m', 'common/common_m'));
         //$this->check_isvalidated();
     }
@@ -39,9 +39,8 @@ class User extends MY_Controller {
         $role = $this->common_m->getAll_array('prak_role',NULL,$arr = array('group_id' => $id,));
         
         ?>
-            <label>Select Role</label>
             <select name="role_id" id="role_id" class="form-control" <?php if(!$role){?>disabled="disabled"<?php }?>>
-                <option value="choose_role">Choose Role</option>
+                <option value="choose_role"><?php echo lang('choose_role');?></option>
                 <?php if($role) { foreach ($role as $row) {?>
 
                 <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>                        

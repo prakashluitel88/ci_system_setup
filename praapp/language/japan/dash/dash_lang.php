@@ -15,3 +15,4 @@ $lang['manage'] = "管理する";
 $lang['sn'] = "SN。";
 $lang['name'] = "名前";
 $lang['description'] = "説明";
+$lang['search'] = "検索...";

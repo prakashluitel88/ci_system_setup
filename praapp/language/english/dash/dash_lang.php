@@ -14,4 +14,5 @@ $lang['charts'] = "Charts";
 $lang['manage'] = "Manage";
 $lang['sn'] = "SN.";
 $lang['name'] = "Name";
+$lang['search'] = "Search ...";
 $lang['description'] = "Description";

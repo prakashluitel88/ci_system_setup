@@ -24,8 +24,8 @@
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                     group_id: { 
-                       message: 'Choose the Group',
+                    group_id: { 
+                        message: 'Choose the Group',
                         validators: {
                              notEmpty: {
                                 message: 'select the group'
@@ -34,7 +34,7 @@
                         }
                     },
                     role_id: { 
-                       message: 'Choose the Role',
+                        message: 'Choose the Role',
                         validators: {
                              notEmpty: {
                                 message: 'select the role'
@@ -83,7 +83,8 @@
             .on('success.form.bv', function(e) {
                 e.preventDefault();
                 var $form = $(e.target),
-                bv    = $form.data('bootstrapValidator');
+                bv = $form.data('bootstrapValidator');
+                
                 $.post($form.attr('action'), $form.serialize(), function(result) {
                     $('#alertBox').removeClass('hide').alert();
                 }, 'json');
@@ -95,7 +96,7 @@
     function listRole(id){
         var base_url = "<?php echo base_url();?>";
         
-        $.post(base_url+'user/roleList',{id:id},function(data){alert(data);
+        $.post(base_url+'user/roleList',{id:id},function(data){
 					  $("#role_list").html(data);					  
 					});       
         

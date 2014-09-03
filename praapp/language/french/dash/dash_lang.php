@@ -15,3 +15,4 @@ $lang['manage'] = "gérer";
 $lang['sn'] = "SN.";
 $lang['name'] = "nom";
 $lang['description'] = "description";
+$lang['search'] = "Recherche ...";

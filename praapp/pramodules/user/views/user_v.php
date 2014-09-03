@@ -8,7 +8,7 @@
             <form name="form_user" role="form" id="form_user" method="post">  
                 
                 <div class="form-group">
-                    <label>Select Group</label>
+                    <label><?php echo lang('select_group');?></label>
                     <select name="group_id" id="group_id" class="form-control" onchange="listRole(this.value);">
                         <option value="choose_group"><?php echo lang('choose_group');?></option>
                         <?php foreach ($groups as $group) { ?>
@@ -20,7 +20,7 @@
                 
                 <div class="form-group">
                     <span id="role_list">
-                        <label>Select Role</label>
+                        <label><?php echo lang('select_role');?></label>
                         <select name="role_id" id="role_id" class="form-control">
                             <option value="choose_role"><?php echo lang('choose_role');?></option>
                             <?php if($role) { foreach ($role as $row) {?>
@@ -35,12 +35,12 @@
                     <input name="username" placeholder="<?php echo lang('enter_username');?>" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input name="password" type="password" placeholder="Enter Password..." class="form-control">
+                    <input name="password" type="password" placeholder="<?php echo lang('enter_password');?>" class="form-control">
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="status" value="1">Status
+                            <input type="checkbox" name="status" value="1"><?php echo lang('status');?>
                         </label>
                     </div>
                 </div>               
@@ -58,10 +58,10 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-user">
                 <thead>
                     <tr>
-                        <th>S.N</th>
-                        <th>Username</th>
-                        <th>password</th>
-                        <th>Roles</th>
+                        <th><?php echo lang('sn');?></th>
+                        <th><?php echo lang('username');?></th>
+                        <th><?php echo lang('password');?></th>
+                        <th><?php echo lang('roles');?></th>
                         
                     </tr>
                 </thead>

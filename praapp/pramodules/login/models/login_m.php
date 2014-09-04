@@ -29,10 +29,16 @@ class Login_m extends CI_Model {
             $user = $query->row();
             
             $data = array(
-                'userid' => $user->id,
+                //Set UserId
+                //'userid' => $user->id,
+                //Set UserName
+                //'username' => $user->username,
+                //First Name
                 //'fname' => $user->fname,
+                //Last Name
                 //'lname' => $user->lname,
-                'username' => $user->username,
+                // Set Group Id
+                // Set Role Id
                 'validated' => true
             );
             $this->session->set_userdata($data);

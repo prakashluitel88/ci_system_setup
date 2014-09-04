@@ -1,4 +1,5 @@
-<script type="text/javascript">
+<script type="text/javascript">    
+    <?php $this->load->resource('common/js/jquery-1.11.1.min.js'); ?>
     <?php $this->load->resource('common/js/jquery-1.11.0.js'); ?>
     <?php $this->load->resource('common/js/bootstrap.min.js'); ?>
     <?php $this->load->resource('common/js/plugins/metisMenu/metisMenu.min.js'); ?>

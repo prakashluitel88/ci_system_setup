@@ -1,4 +1,7 @@
 <?php $this->load->view('common/login_header_v'); ?>
+<style>
+<?php $this->load->resource('common/js/jquery-1.11.0.js'); ?>
+</style>
 
 <div class="container">
     <div class="row">
@@ -13,14 +16,16 @@
                 <div class="panel-body">
                     <?php 
                         $attributes = array('name' => 'process', 'role' => 'form', 'method' => 'post');
-                        echo form_open('login/process', $attributes); 
+                        echo form_open('', $attributes); 
                     ?>
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="<?php echo lang('username'); ?>" name="username" type="text" autofocus>
+                                <input class="form-control" placeholder="<?php echo lang('username'); ?>" name="username" id="username" type="text" autofocus>
+                                <?php echo form_error('username','<div class="error">', '</div>');?>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="<?php echo lang('password'); ?>" name="password" type="password" value="">
+                                <input class="form-control" placeholder="<?php echo lang('password'); ?>" name="password" id="password" type="password" value="">
+                                <?php echo form_error('password','<div class="error">', '</div>');?>
                             </div>
                             <div class="checkbox">
                                 <label>
@@ -28,7 +33,7 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <input type="submit" name="submitBtn" class="btn btn-lg btn-success btn-block" value="<?php echo lang('login');?>">
+                            <a name="submitBtn" id="loginBtn" class="btn btn-lg btn-success btn-block"><?php echo lang('login');?></a>
                         </fieldset>
                     </form>
                 </div>
@@ -36,8 +41,6 @@
         </div>
     </div>
 </div>
-
-
 
 <?php $this->load->view('common/login_footer_v'); ?><!-- Common Resources load -->
 <?php $this->load->resource('login/login_js'); ?><!-- Page Specific Resources load -->

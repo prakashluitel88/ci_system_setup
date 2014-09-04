@@ -22,7 +22,7 @@ class Login extends MY_Controller {
     }
 
     public function process() {
-        redirect('dash');
+        //redirect('dash');
         // Load the model
         $this->load->model('login_m');
         // Validate the user can login
@@ -32,11 +32,14 @@ class Login extends MY_Controller {
             // If user did not validate, then show them login page again
             $msg = '<font color=red>Invalid username and/or password.</font><br />';
             $this->session->set_flashdata('error', $this->lang->line('login_error'));
-            $this->index();
+            echo "Failed";
+            //$this->index();
         } else {
+            
+            echo "Success";
             // If user did validate, 
             // Send them to members area
-            redirect('home');
+            //redirect('dash');
         }
     }
 

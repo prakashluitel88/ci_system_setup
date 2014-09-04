@@ -15,7 +15,7 @@ class Login_m extends CI_Model {
         // grab user input
         $username = $this->security->xss_clean($this->input->post('username'));
         $password = $this->security->xss_clean($this->input->post('password'));
-
+        $password = (hash('sha512', $password));
         // Prep the query
         $this->db->where('username', $username);
         $this->db->where('password', $password);
@@ -30,13 +30,13 @@ class Login_m extends CI_Model {
             
             $data = array(
                 //Set UserId
-                //'userid' => $user->id,
+                'userid' => $user->id,
                 //Set UserName
-                //'username' => $user->username,
+                'username' => $user->username,
                 //First Name
                 //'fname' => $user->fname,
-                //Last Name
-                //'lname' => $user->lname,
+                //Roles
+                'roles' => $user->roles,
                 // Set Group Id
                 // Set Role Id
                 'validated' => true

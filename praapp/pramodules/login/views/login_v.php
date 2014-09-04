@@ -28,7 +28,7 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="<?php echo base_url(); ?>login/process" class="btn btn-lg btn-success btn-block"><?php echo lang('login'); ?></a>
+                            <input type="submit" name="submitBtn" class="btn btn-lg btn-success btn-block" value="<?php echo lang('login');?>">
                         </fieldset>
                     </form>
                 </div>

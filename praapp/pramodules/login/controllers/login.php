@@ -34,8 +34,7 @@ class Login extends MY_Controller {
             $this->session->set_flashdata('error', $this->lang->line('login_error'));
             echo "Failed";
             //$this->index();
-        } else {
-            
+        } else {            
             echo "Success";
             // If user did validate, 
             // Send them to members area

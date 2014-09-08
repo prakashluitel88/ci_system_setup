@@ -7,6 +7,7 @@ $lang['dashboard_header'] = "管理者のテーマ";
 $lang['user_profile'] = "ユーザープロファイル";
 $lang['setting'] = "設定";
 $lang['sign_up'] = "サインアップ";
+$lang['add'] = "加える";
 $lang['reset'] = "リセット";
 $lang['logout'] = "ログアウト";
 $lang['dashboard'] = "ダッシュボード";

@@ -45,7 +45,7 @@
                     </div>
                 </div>               
                 <!--<button onclick="return false;" id="submit" class="btn btn-success" type="submit">Submit</button>-->
-                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('sign_up');?></button>
+                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('add');?></button>
                 <button id="reset" class="btn btn-success" type="reset"><?php echo lang('reset');?></button>
             </form>
             
@@ -60,7 +60,7 @@
                     <tr>
                         <th><?php echo lang('sn');?></th>
                         <th><?php echo lang('username');?></th>
-                        <th><?php echo lang('password');?></th>
+<!--                        <th><?php // echo lang('password');?></th>-->
                         <th><?php echo lang('roles');?></th>
                         
                     </tr>
@@ -71,7 +71,7 @@
                     <tr class="odd gradeX">
                         <td><?php echo $sn;?></td>
                         <td><?php echo $user->username;?></td>
-                        <td><?php echo $user->password;?></td> 
+<!--                        <td><?php //echo $user->password;?></td> -->
                         <td><?php echo $user->roles;?></td>
                     </tr>
                     <?php } ?>

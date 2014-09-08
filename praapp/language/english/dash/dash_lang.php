@@ -7,6 +7,7 @@ $lang['dashboard_header'] = "Admin Theme";
 $lang['user_profile'] = "User Profile";
 $lang['setting'] = "Settings";
 $lang['sign_up'] = "Sign Up";
+$lang['add'] = "Add";
 $lang['reset'] = "Reset";
 $lang['logout'] = "Logout";
 $lang['dashboard'] = "Dashboard";

@@ -7,7 +7,7 @@
             <form name="form_role" role="form" id="form_role" method="post">
                 <div class="form-group">
                     <select name="group_id" id="group_id" class="form-control">
-                        <option><?php echo lang('choose_group');?></option>
+                        <option value="choose_group"><?php echo lang('choose_group');?></option>
                         <?php foreach ($groups as $group) { ?>
                         
                         <option value="<?php echo $group->id;?>"><?php echo $group->name;?></option>                        
@@ -21,7 +21,7 @@
                     <textarea placeholder="<?php echo lang('role_placeholder_desc');?>" name="description" rows="3" class="form-control"></textarea>
                 </div>
                 <!--<button onclick="return false;" id="submit" class="btn btn-success" type="submit">Submit</button>-->
-                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('sign_up');?></button>
+                <button onclick="return false;" type="submit" class="btn btn-success"><?php echo lang('add');?></button>
                 <button id="reset" class="btn btn-success" type="reset"><?php echo lang('reset');?></button>
             </form>
         </div>

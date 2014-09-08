@@ -54,6 +54,7 @@ class User extends MY_Controller {
         $roleId = $this->input->post("role_id");
         $username = $this->input->post("username");
         $password = $this->input->post("password");
+        $password = (hash('sha512', $password));
         
         $user_array_form = array(
                                 'username'=> $username,

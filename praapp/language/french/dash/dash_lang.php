@@ -8,6 +8,7 @@ $lang['user_profile'] = "Profil utilisateur";
 $lang['setting'] = "paramètres";
 $lang['logout'] = "Déconnexion";
 $lang['sign_up'] = "signer";
+$lang['add'] = "ajouter";
 $lang['reset'] = "remettre";
 $lang['dashboard'] = "tableau de bord";
 $lang['charts'] = "Graphiques";

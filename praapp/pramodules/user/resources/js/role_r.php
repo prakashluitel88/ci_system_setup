@@ -81,6 +81,7 @@
             $( '#role_form' ).css( 'display', 'none' );
             $( 'button#role' ).html('Create Role');
         } else if ($( 'button#role' ).html() == 'Create Role') {
+            $('select#group_id').val('choose_group');
             $( '#role_form' ).css( 'display', 'block' );
             $( 'button#role' ).html('Hide Form');
         }

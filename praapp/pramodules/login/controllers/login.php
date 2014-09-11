@@ -30,12 +30,12 @@ class Login extends MY_Controller {
         // Now we verify the result
         if (!$result) {
             // If user did not validate, then show them login page again
-            $msg = '<font color=red>Invalid username and/or password.</font><br />';
-            $this->session->set_flashdata('error', $this->lang->line('login_error'));
-            echo "Failed";
-            //$this->index();
+            //$msg = '<font color=red>Invalid username and/or password.</font><br />';
+            //$this->session->set_flashdata('error', $this->lang->line('login_error'));
+            echo "0";
+            
         } else {            
-            echo "Success";
+            echo "1";
             // If user did validate, 
             // Send them to members area
             //redirect('dash');

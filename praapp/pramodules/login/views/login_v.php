@@ -8,7 +8,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div>
-                    <h3 class="panel-title"><?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error');} ?></h3>
+                    <h3 class="panel-title errmsg"><?php if ($this->session->flashdata('error')) { echo $this->session->flashdata('error');} ?></h3>
                 </div>
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo lang('header'); ?></h3>
@@ -21,7 +21,7 @@
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="<?php echo lang('username'); ?>" name="username" id="username" type="text" autofocus>
-                                <?php echo form_error('username','<div class="error">', '</div>');?>
+                                <?php echo form_error('username','<div class="error uerror">', '</div>');?>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="<?php echo lang('password'); ?>" name="password" id="password" type="password" value="">

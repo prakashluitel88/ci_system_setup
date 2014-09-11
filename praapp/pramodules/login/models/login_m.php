@@ -12,6 +12,9 @@ class Login_m extends CI_Model {
     }
 
     public function validate() {
+        //$this->load->library('form_validation');
+        //$this->form_validation->set_rules('username','username','required');
+        //$this->form_validation->set_rules('password','password','required');
         // grab user input
         $username = $this->security->xss_clean($this->input->post('username'));
         $password = $this->security->xss_clean($this->input->post('password'));
@@ -19,7 +22,6 @@ class Login_m extends CI_Model {
         // Prep the query
         $this->db->where('username', $username);
         $this->db->where('password', $password);
-
         // Run the query
         $query = $this->db->get('prak_user');
         

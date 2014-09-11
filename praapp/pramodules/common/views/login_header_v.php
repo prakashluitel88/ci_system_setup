@@ -32,7 +32,7 @@
     <div class="top-menu">
         <div class="usermenu">
             <ul class="navbar-top-links navbar-right nav">
-                <li <?php if ($lang == 'en') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales"><a href="<?php echo base_url() . 'common/switchLanguage?lang=en&current_url=' . current_url(); ?>" >en</a></li>
+                <li <?php if ($lang == 'en' || !$lang) { echo 'style="background-color: #4cae4c;"'; } ?> class="locales"><a href="<?php echo base_url() . 'common/switchLanguage?lang=en&current_url=' . current_url(); ?>" >en</a></li>
                 <li <?php if ($lang == 'jp') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales"><a href="<?php echo base_url() . 'common/switchLanguage?lang=jp&current_url=' . current_url(); ?>" >jp</a></li>
                 <li <?php if ($lang == 'fr') { echo 'style="background-color: #4cae4c;"'; } ?> class="locales last"><a href="<?php echo base_url() . 'common/switchLanguage?lang=fr&current_url=' . current_url(); ?>">fr</a></li></ul>
         </div>					

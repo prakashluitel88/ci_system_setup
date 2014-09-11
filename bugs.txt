@@ -1,6 +1,0 @@
-1. While role is added then it will added for two times
-2. After role is added then choose role is not in the label for the next time bit not refreshing the browser
-3. Label is Choose Group instead of Choose Role for dropdown
-4. In create role there is Sign Up button, Make it Add
-
-5. Error in adding user: there is problem in user adding

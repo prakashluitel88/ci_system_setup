@@ -1,4 +1,13 @@
 <!-- /.panel -->
+<style type="text/css" media="screen">
+			.chat_time {
+				font-style: italic;
+				font-size: 9px;
+			}
+		</style>
+		
+
+
 <div class="chat-panel panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-comments fa-fw"></i>
@@ -106,14 +115,27 @@
     <!-- /.panel-body -->
     <div class="panel-footer">
         <div class="input-group">
-            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+            <input id="btn-input" id="txt_message"  name="txt_message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
             <span class="input-group-btn">
-                <button class="btn btn-warning btn-sm" id="btn-chat">
+                <button class="btn btn-warning btn-sm" id="btn-chat" name="btn_send_chat" id="btn_send_chat" onclick="javascript:sendChatText();" >
                     Send
                 </button>
             </span>
         </div>
     </div>
     <!-- /.panel-footer -->
+</div>
+<div class="chat" onload="javascript:startChat();">
+		<p id="p_status">Status: Normal</p>
+		Current Chitter-Chatter:
+		<div id="div_chat" style="height: 300px; width: 500px; overflow: auto; background-color: #CCCCCC; border: 1px solid #555555;">
+			
+		</div>
+		<form id="frmmain" name="frmmain" onsubmit="return blockSubmit();">
+			<input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" onclick="javascript:getChatText();" />
+			<input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" onclick="javascript:resetChat();" /><br />
+<!--			<input type="text" id="txt_message" name="txt_message" style="width: 447px;" />-->
+<!--			<input type="button" name="btn_send_chat" id="btn_send_chat" value="Send" onclick="javascript:sendChatText();" />-->
+		</form>
 </div>
 <!-- /.panel .chat-panel -->

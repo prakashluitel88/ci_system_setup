@@ -41,6 +41,12 @@ class Login extends MY_Controller {
             //redirect('dash');
         }
     }
+    
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect($this->index());
+        
+    }
 
 }
 

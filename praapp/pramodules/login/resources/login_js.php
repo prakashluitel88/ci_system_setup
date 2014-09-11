@@ -20,7 +20,7 @@ $( document ).ready(function() {
             type: 'POST',
             url: url,
             data:{username: username, password: password},
-            success: function(data){alert(data);
+            success: function(data){
                 if(data == "1"){
                     window.location= "<?php echo base_url();?>dash";
                 }else {

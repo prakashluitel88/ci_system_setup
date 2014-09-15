@@ -152,7 +152,7 @@ class Common_m extends CI_Model {
 
     function getLast($table) {
 
-        $this->db->order_by('id', 'desc');
+        $this->db->order_by('message_id', 'desc');
 
         $query = $this->db->get($table);
 

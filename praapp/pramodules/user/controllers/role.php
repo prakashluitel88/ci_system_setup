@@ -35,7 +35,6 @@ class Role extends MY_Controller {
     
     public function create() {
         $data = $_POST;
-        
         if ($this->role_m->create($data)) {
             return TRUE;
         }        

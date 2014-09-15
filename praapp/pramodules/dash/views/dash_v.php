@@ -1,17 +1,7 @@
-<!-- /.panel -->
-<style type="text/css" media="screen">
-			.chat_time {
-				font-style: italic;
-				font-size: 9px;
-			}
-		</style>
-		
-
-
 <div class="chat-panel panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-comments fa-fw"></i>
-        Chat
+        Chat 
         <div class="btn-group pull-right">
             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-chevron-down"></i>
@@ -47,25 +37,29 @@
         </div>
     </div>
     <!-- /.panel-heading -->
-    <div class="panel-body">
-        <ul class="chat">
+    <div class="panel-body" id="chatbox">
+        <?php if(!empty($chat_details)){
+            foreach($chat_details as $row){ ?>
+                <ul class="chat">
             <li class="left clearfix">
                 <span class="chat-img pull-left">
                     <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
                 </span>
                 <div class="chat-body clearfix">
                     <div class="header">
-                        <strong class="primary-font">Jack Sparrow</strong> 
+                        <strong class="primary-font"><span id="chat_name"><?php echo $row->user_name;?></span></strong> 
                         <small class="pull-right text-muted">
-                            <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                            <i class="fa fa-clock-o fa-fw sess_time"></i><?php echo $row->post_time;?>
                         </small>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
-                    </p>
+                    <div id="chatmsg">
+                        <p>
+                            <?php echo $row->message;?>
+                        </p>
+                    </div>
                 </div>
             </li>
-            <li class="right clearfix">
+<!--            <li class="right clearfix">
                 <span class="chat-img pull-right">
                     <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
                 </span>
@@ -109,33 +103,89 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                     </p>
                 </div>
-            </li>
+            </li>-->
         </ul>
+            <?php }
+        } ?>
+        
     </div>
     <!-- /.panel-body -->
     <div class="panel-footer">
+<!--        <input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" />
+            <input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" />-->
+            
         <div class="input-group">
-            <input id="btn-input" id="txt_message"  name="txt_message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-            <span class="input-group-btn">
-                <button class="btn btn-warning btn-sm" id="btn-chat" name="btn_send_chat" id="btn_send_chat" onclick="javascript:sendChatText();" >
-                    Send
-                </button>
+            
+            <input id="txt_message"  name="txt_message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+            <span class="input-group-btn">                
+                <button class="btn btn-warning btn-sm" id="btn-chat" name="btn_send_chat"> Send  </button>
             </span>
         </div>
     </div>
     <!-- /.panel-footer -->
 </div>
-<div class="chat" onload="javascript:startChat();">
-		<p id="p_status">Status: Normal</p>
-		Current Chitter-Chatter:
-		<div id="div_chat" style="height: 300px; width: 500px; overflow: auto; background-color: #CCCCCC; border: 1px solid #555555;">
-			
-		</div>
-		<form id="frmmain" name="frmmain" onsubmit="return blockSubmit();">
-			<input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" onclick="javascript:getChatText();" />
-			<input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" onclick="javascript:resetChat();" /><br />
-<!--			<input type="text" id="txt_message" name="txt_message" style="width: 447px;" />-->
-<!--			<input type="button" name="btn_send_chat" id="btn_send_chat" value="Send" onclick="javascript:sendChatText();" />-->
-		</form>
-</div>
-<!-- /.panel .chat-panel -->
+
+<script type="text/javascript">
+    $( document ).ready(function(){
+        var last_chat_id = "<?php echo !empty($last_msg_id) ? $last_msg_id->message_id:'';?>";
+        
+        //current time calculation
+        var currentTime = new Date()
+        var hours = currentTime.getHours()
+        var minutes = currentTime.getMinutes()
+
+        if (minutes < 10){
+          minutes = "0" + minutes;
+        }
+        var suffix = "AM";
+        if (hours >= 12) {
+        suffix = "PM";
+        hours = hours - 12;
+        }
+        if (hours == 0) {
+        hours = 12;
+        }
+       var current_time = ( hours + ":" + minutes + " " + suffix );
+        
+        var username = "<?php echo $this->session->userdata('username');?>";
+        setInterval (loadLog, 2500);
+        
+        $('#btn-chat').on('click',function(){
+            var msg = $('#txt_message').val();
+            if (msg == "") {
+                alert("enter the message");
+                return false;
+            }
+            $.ajax({
+                    url: "<?php echo base_url();?>dash/insert",
+                    data: {message: msg, current_time:current_time},
+                    type: 'post',
+                    success: function(data){
+                        alert("data added sucessfully"); 
+                        $("#chatbox").animate({ scrollTop: 1000}, 'normal');
+                    },
+            });
+            
+        });
+        
+        
+        function loadLog(){
+            var msg = $('#txt_message').val();
+            $.ajax({
+                    url: "<?php echo base_url();?>dash/getChat",
+                    data: {last_chat_id:last_chat_id},
+                    type: 'post',
+                    cache: false,
+                    success: function(data){
+                            ///location.reload(); 
+                            setInterval(function() {
+                            $('#chatbox').load("<?php echo base_url();?>dash/dash_v.php");
+                            }, 5000);
+                             //Autoscroll to bottom of div
+                            			
+                    },
+            });
+        }
+
+});
+</script>

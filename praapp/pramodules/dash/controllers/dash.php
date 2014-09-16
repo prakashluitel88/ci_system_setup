@@ -2,10 +2,10 @@
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-/* Author: Prakash Luitel
- * Description: Home controller class
- * This is only viewable to those members that are logged in
- */
+    /* Author: Prakash Luitel
+     * Description: Home controller class
+     * This is only viewable to those members that are logged in
+     */
 
 class Dash extends MY_Controller {
 
@@ -33,13 +33,10 @@ class Dash extends MY_Controller {
         }
     }
     public function insert(){
-        // Load the model
-        //$this->load->model('dash_m');       
-        
         $user_id = $this->session->userdata('userid');
         $user_name = $this->session->userdata('username');
         
-        //get the ajax post data
+        //get the ajax input post data
         $message = $this->input->post('message');
         $post_time = $this->input->post('current_time');
         if($message != ""){
@@ -51,12 +48,8 @@ class Dash extends MY_Controller {
                 echo "failed";
             }
         }
-//        $fp = fopen("log.html", 'a') or die("Unable to open file!");
-//        fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: ".stripslashes(htmlspecialchars($text))."<br></div>");
-//        fclose($fp);
-        
-               
     }
+    
     public function getChat(){
         $lastId = $this->input->post('last_chat_id');
         

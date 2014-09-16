@@ -41,24 +41,24 @@
         <?php if(!empty($chat_details)){
             foreach($chat_details as $row){ ?>
                 <ul class="chat">
-            <li class="left clearfix">
-                <span class="chat-img pull-left">
-                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                </span>
-                <div class="chat-body clearfix">
-                    <div class="header">
-                        <strong class="primary-font"><span id="chat_name"><?php echo $row->user_name;?></span></strong> 
-                        <small class="pull-right text-muted">
-                            <i class="fa fa-clock-o fa-fw sess_time"></i><?php echo $row->post_time;?>
-                        </small>
-                    </div>
-                    <div id="chatmsg">
-                        <p>
-                            <?php echo $row->message;?>
-                        </p>
-                    </div>
-                </div>
-            </li>
+                    <li class="left clearfix">
+                        <span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font"><span id="chat_name"><?php echo $row->user_name;?></span></strong> 
+                                <small class="pull-right text-muted">
+                                    <i class="fa fa-clock-o fa-fw sess_time"></i><?php echo $row->post_time;?>
+                                </small>
+                            </div>
+                            <div id="chatmsg">
+                                <p>
+                                    <?php echo $row->message;?>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
 <!--            <li class="right clearfix">
                 <span class="chat-img pull-right">
                     <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
@@ -112,8 +112,7 @@
     <!-- /.panel-body -->
     <div class="panel-footer">
 <!--        <input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" />
-            <input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" />-->
-            
+            <input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" />-->            
         <div class="input-group">
             
             <input id="txt_message"  name="txt_message" type="text" class="form-control input-sm" placeholder="Type your message here..." />
@@ -148,7 +147,7 @@
        var current_time = ( hours + ":" + minutes + " " + suffix );
         
         var username = "<?php echo $this->session->userdata('username');?>";
-        setInterval (loadLog, 2500);
+        setInterval (loadLog, 3000);
         
         $('#btn-chat').on('click',function(){
             var msg = $('#txt_message').val();
@@ -161,8 +160,9 @@
                     data: {message: msg, current_time:current_time},
                     type: 'post',
                     success: function(data){
-                        alert("data added sucessfully"); 
-                        $("#chatbox").animate({ scrollTop: 1000}, 'normal');
+                        alert("data added sucessfully");
+                        $('#txt_message').val('');
+                        
                     },
             });
             
@@ -177,11 +177,22 @@
                     type: 'post',
                     cache: false,
                     success: function(data){
-                            ///location.reload(); 
-                            setInterval(function() {
-                            $('#chatbox').load("<?php echo base_url();?>dash/dash_v.php");
-                            }, 5000);
-                             //Autoscroll to bottom of div
+                          
+                            if(data == 1) {                              
+
+                                $("#chatbox").load(location.href+" #chatbox>*","");
+
+                                //$("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
+                                //var mydiv = $('#chatbox'); mydiv.scrollTop(mydiv.prop('scrollHeight'));
+                                //$("#chatbox").animate({scrollTop: $('ul.chat li:last').offset().top + 30});
+                                window.setInterval(function() {
+                                    var elem = document.getElementById('chatbox');
+                                    elem.scrollTop = elem.scrollHeight;
+                                  }, 3000);
+                                return false;
+                            }
+                            return false;
+                            
                             			
                     },
             });

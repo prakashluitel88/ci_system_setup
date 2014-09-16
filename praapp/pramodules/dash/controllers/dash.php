@@ -59,11 +59,15 @@ class Dash extends MY_Controller {
     }
     public function getChat(){
         $lastId = $this->input->post('last_chat_id');
+        
         if($lastId){
             $get_data = $this->dash_m->getLatest($lastId);
-                if(!empty($get_data))
-                    return true;
-        }
+            
+            if(!empty($get_data))
+                echo '1';
+            else 
+                echo '0';
+    }
         
     }
 }

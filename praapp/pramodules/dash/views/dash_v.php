@@ -144,33 +144,36 @@
         if (hours == 0) {
         hours = 12;
         }
-       var current_time = ( hours + ":" + minutes + " " + suffix );
+        var current_time = ( hours + ":" + minutes + " " + suffix );
         
         var username = "<?php echo $this->session->userdata('username');?>";
+        //loading the ajax call in each 3 sec
         setInterval (loadLog, 3000);
         
         $('#btn-chat').on('click',function(){
             var msg = $('#txt_message').val();
+            
             if (msg == "") {
                 alert("enter the message");
                 return false;
             }
+            
             $.ajax({
                     url: "<?php echo base_url();?>dash/insert",
                     data: {message: msg, current_time:current_time},
                     type: 'post',
                     success: function(data){
-                        alert("data added sucessfully");
+                        //alert("data added sucessfully");
                         $('#txt_message').val('');
                         
                     },
+                });
             });
-            
-        });
         
         
         function loadLog(){
             var msg = $('#txt_message').val();
+            
             $.ajax({
                     url: "<?php echo base_url();?>dash/getChat",
                     data: {last_chat_id:last_chat_id},
@@ -179,20 +182,16 @@
                     success: function(data){
                           
                             if(data == 1) {                              
-
-                                $("#chatbox").load(location.href+" #chatbox>*","");
-
-                                //$("#chatbox").scrollTop($("#chatbox")[0].scrollHeight);
-                                //var mydiv = $('#chatbox'); mydiv.scrollTop(mydiv.prop('scrollHeight'));
-                                //$("#chatbox").animate({scrollTop: $('ul.chat li:last').offset().top + 30});
+                                //refresh the chatbox div
+                                $("#chatbox").load(location.href+" #chatbox>*",""); 
+                                //place the scroll bar to the bottom
                                 window.setInterval(function() {
                                     var elem = document.getElementById('chatbox');
                                     elem.scrollTop = elem.scrollHeight;
-                                  }, 3000);
+                                  }, 2000);
                                 return false;
                             }
-                            return false;
-                            
+                            return false;                            
                             			
                     },
             });

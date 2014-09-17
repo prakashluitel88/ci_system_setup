@@ -29,6 +29,7 @@ class Dash_m extends CI_Model {
         $this->db->from($this->table_name);
         $this->db->where('message_id >', $data);
         $result = $this->db->get();
+        
         return $result->result_array();
     }
 }

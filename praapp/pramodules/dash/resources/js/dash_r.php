@@ -6,7 +6,7 @@
             }
         });
         
-        var last_chat_id = "<?php echo !empty($last_msg_id) ? $last_msg_id->message_id:'';?>";
+        var last_chat_id = "<?php echo !empty($last_msg_id) ? $last_msg_id->message_id:'0';?>";
         
         //current time calculation
         var currentTime = new Date()

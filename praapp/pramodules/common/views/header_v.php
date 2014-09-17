@@ -14,12 +14,12 @@
         <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url(); ?>../praapp/pramodules/common/resources/bower-form-validate/dist/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css">
         <style type="text/css">
-<?php $this->load->resource('common/css/plugins/metisMenu/metisMenu.min.css'); ?>
-<?php $this->load->resource('common/css/plugins/dataTables.bootstrap.css'); ?>
-<?php $this->load->resource('common/css/sb-admin-2.css'); ?>
-<?php $this->load->resource('common/css/header.css'); ?>
-<?php $this->load->resource('common/css/plugins/timeline.css'); ?>
-<?php $this->load->resource('common/css/plugins/morris.css'); ?>
+            <?php $this->load->resource('common/css/plugins/metisMenu/metisMenu.min.css'); ?>
+            <?php $this->load->resource('common/css/plugins/dataTables.bootstrap.css'); ?>
+            <?php $this->load->resource('common/css/sb-admin-2.css'); ?>
+            <?php $this->load->resource('common/css/header.css'); ?>
+            <?php $this->load->resource('common/css/plugins/timeline.css'); ?>
+            <?php $this->load->resource('common/css/plugins/morris.css'); ?>
         </style>
         <script type="text/javascript">
 <?php $this->load->resource('common/js/jquery-1.11.0.js'); ?>

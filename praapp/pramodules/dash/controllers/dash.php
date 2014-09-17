@@ -23,6 +23,7 @@ class Dash extends MY_Controller {
 
         $data['chat_details'] = $this->common_m->getAll('message');
         $data['last_msg_id'] = $this->common_m->getLast('message');
+        $data['user_details'] = $this->common_m->getAll('prak_user');
 
         $this->load->view('common/common_v', $data);
     }
@@ -55,15 +56,16 @@ class Dash extends MY_Controller {
 
     public function getChat() {
         $lastId = $this->input->post('last_chat_id');
-
-        if ($lastId) {
+        
+        if ($lastId) {            
             $get_data = $this->dash_m->getLatest($lastId);
-
-            if (!empty($get_data))
-                echo '1';
-            else
-                echo '0';
+        } else {
+            $get_data = $this->common_m->getAll('message');
         }
+        if (!empty($get_data))
+            echo '1';
+        else
+            echo '0';
     }
 
 }

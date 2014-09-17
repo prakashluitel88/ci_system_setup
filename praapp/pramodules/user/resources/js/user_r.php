@@ -134,9 +134,9 @@
     $( 'button[type=submit]' ).click(function() {
         $.ajax({
             type: "POST",
-            url: '<?php echo base_url(); ?>user/user/create',
+            url: '<?php echo base_url(); ?>user/create',
             data: $("#form_user").serialize(),
-            success: function() {
+            success: function(data) {
                 alert('User Added Successfully!');
                 $( '#user_form' ).hide();
                 $( 'button#user' ).html('Create User');

@@ -60,21 +60,22 @@
                     <tr>
                         <th><?php echo lang('sn');?></th>
                         <th><?php echo lang('username');?></th>
+                        <th><?php echo lang('group');?></th>
 <!--                        <th><?php // echo lang('password');?></th>-->
                         <th><?php echo lang('roles');?></th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $sn = 1; ?>
-                    <?php foreach ($users as $user) { ?>
-                    <tr class="odd gradeX">
-                        <td><?php echo $sn;?></td>
-                        <td><?php echo $user->username;?></td>
-<!--                        <td><?php //echo $user->password;?></td> -->
-                        <td><?php echo $user->roles;?></td>
-                    </tr>
-                    <?php } ?>
+                    <?php $sn = 1; 
+                        foreach ($users as $user) { ?>
+                            <tr class="odd gradeX">
+                                <td><?php echo $sn;?></td>
+                                <td><?php echo $user->username;?></td>
+                                <td><?php echo $this->common_m->getById('prak_group','id',$user->group_id)->name;?></td>
+                                <td><?php echo $this->common_m->getById('prak_role','id',$user->role_id)->name;?></td>
+                            </tr>
+                    <?php  $sn++; } ?>
                 </tbody>
             </table>
         </div>

@@ -30,18 +30,21 @@ class Login_m extends CI_Model {
         if ($query->num_rows == 1) {
             // If there is a user, then create session data
             $user = $query->row();
-            
+            $userDetails = $this->common_m->getById('prak_user_group','user_id',$user->id);
             $data = array(
                 //Set UserId
-                'userid' => $user->id,
+                'userId' => $user->id,
                 //Set UserName
                 'username' => $user->username,
                 //First Name
                 //'fname' => $user->fname,
                 //Roles
-                'roles' => $user->roles,
+                
                 // Set Group Id
+                'groupId' => $userDetails->group_id,
                 // Set Role Id
+                'roleId' => $userDetails->role_id,
+                
                 'validated' => true
             );
             $this->session->set_userdata($data);

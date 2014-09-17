@@ -23,8 +23,9 @@ class User extends MY_Controller {
         
         $data['groups'] = $this->common_m->getAll('prak_group');
         $data['roles'] = $this->common_m->getAll('prak_role');
-        $data['users'] = $this->common_m->getAll('prak_user');
-        
+        //$data['users'] = $this->common_m->getAll('prak_user');
+        $data['users'] = $this->user_m->joinByGroup();
+        //print_r($data['users']);die();
         $this->load->view('common/common_v', $data);
     }
 
@@ -56,7 +57,7 @@ class User extends MY_Controller {
         $password = $this->input->post("password");
         $password = (hash('sha512', $password));
         
-        $user_array_form = array(
+        $user_form = array(
                                 'username'=> $username,
                                 'username_canonical'=>NULL,
                                 'email'=>NULL,
@@ -72,15 +73,23 @@ class User extends MY_Controller {
                                 'password_requested_at'=>NULL,
                                 'credentials_expired'=>NULL,
                                 'credentials_expire_at'=>NULL,
-                                'roles' => $roleId
+                                'roles' => 'roles'
                             );
         
-       
-        if ($this->user_m->create($user_array_form)) {
-            return TRUE;
-        }        
         
-        return FALSE;
+        $id = ($this->common_m->insert('prak_user', $user_form));
+        if($id){
+            $user_group_form = array('user_id'=> $id,
+                                    'group_id'=>$groupId,
+                                    'role_id'=>$roleId,);
+            if ($this->user_m->create($user_group_form))
+                return TRUE;
+            else 
+                return FALSE;                
+        } 
+        else {
+            return FALSE;
+        }
     }
 
 }

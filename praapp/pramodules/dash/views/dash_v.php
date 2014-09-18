@@ -35,6 +35,7 @@
                 </li>
             </ul>
         </div>
+        
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body" id="chatbox">
@@ -122,7 +123,110 @@
         </div>
     </div>
     <!-- /.panel-footer -->
+    
 </div>
+
 
 <?php $this->load->resource('dash/js/dash_r'); ?>
 <?php $this->load->resource('dash/css/dash_r'); ?>
+<style>
+    .chatbox {
+        position:relative;
+	margin-right: 10px;
+	max-width: 225px;
+}
+
+.chatboxhead {
+	background-color: #ACC9FD;
+	padding:7px;
+	color: #ffffff;
+
+	border-right:1px solid #ACC9FD;
+	border-left:1px solid #ACC9FD;
+}
+
+.chatboxblink {
+	/*background-color: #176689;*/
+	background-color: #6992FC;
+	border-right:1px solid #176689;
+	border-left:1px solid #176689;
+}
+
+.chatboxcontent {
+	font-family: arial,sans-serif;
+	font-size: 13px;
+	color: #333333;
+	height:200px;
+	width:225px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:7px;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #eeeeee;
+	background-color: #ffffff;
+	line-height: 1.3em;
+}
+
+.chatboxinput {
+	padding: 5px;
+	background-color: #ffffff;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+}
+
+.chatboxtextarea {
+	width: 206px;
+	height:44px;
+	padding:3px 0pt 3px 3px;
+	border: 1px solid #0066FF;
+	margin: 1px;
+	overflow:hidden;
+}
+
+.chatboxtextareaselected {
+	border: 2px solid #ACC9FD;
+	margin:0;
+}
+
+.chatboxmessage {
+	margin-left:1em;
+}
+
+.chatboxinfo {
+	margin-left:-1em;
+	color:#666666;
+
+}
+
+.chatboxmessagefrom {
+	margin-left:-1em;
+	font-weight: bold;
+}
+
+.chatboxmessagecontent {
+}
+
+.chatboxoptions {
+	float: right;
+}
+
+.chatboxoptions a {
+	text-decoration: none;
+	color: white;
+	font-weight:bold;
+	font-family:Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+}
+
+.chatboxtitle {
+	float: left;
+	font-size:13px;
+}
+
+.chatboxhead {
+		/*cursor:move !important;*/
+}
+
+
+</style>

@@ -20,11 +20,10 @@ class Dash extends MY_Controller {
     public function index() {
         $data['page_title'] = 'Dashboard';
         $data['page_view'] = 'dash/dash_v';
-
+                
         $data['chat_details'] = $this->common_m->getAll('message');
         $data['last_msg_id'] = $this->common_m->getLast('message');
         $data['user_details'] = $this->common_m->getAll('prak_user');
-
         $this->load->view('common/common_v', $data);
     }
 
@@ -62,7 +61,7 @@ class Dash extends MY_Controller {
         } else {
             $get_data = $this->common_m->getAll('message');
         }
-        if (!empty($get_data))
+        if (!empty($get_data)) 
             echo '1';
         else
             echo '0';

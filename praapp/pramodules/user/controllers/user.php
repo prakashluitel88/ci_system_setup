@@ -62,7 +62,7 @@ class User extends MY_Controller {
                                 'username_canonical'=>NULL,
                                 'email'=>NULL,
                                 'email_canonical'=>NULL,
-                                'enabled'=>'1',
+                                'enabled'=>'0',
                                 'salt'=>NULL,
                                 'password' => $password,
                                 'last_login'=>NULL,

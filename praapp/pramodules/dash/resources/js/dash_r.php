@@ -1,5 +1,7 @@
 <script type="text/javascript">
     $( document ).ready(function(){
+        
+        
        $(document).keypress(function(e) {
             if(e.which == 13) {
                 $('#btn-chat').click();
@@ -76,6 +78,8 @@
                     },
             });
         }
+        
+        
 
 });
 </script>

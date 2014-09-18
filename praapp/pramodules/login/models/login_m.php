@@ -25,11 +25,14 @@ class Login_m extends CI_Model {
         $this->db->where('password', $password);
         // Run the query
         $query = $this->db->get('prak_user');
-        
         // Let's check if there are any results
         if ($query->num_rows == 1) {
             // If there is a user, then create session data
             $user = $query->row();
+            //enabled the user when sucessful login
+            $this->db->where('id', $user->id);
+            $this->db->update('prak_user', array('enabled'=>'1')); 
+            
             $userDetails = $this->common_m->getById('prak_user_group','user_id',$user->id);
             $data = array(
                 //Set UserId

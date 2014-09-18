@@ -10,11 +10,11 @@ class Login extends MY_Controller {
 
     function __construct() {
         parent::__construct();
-        
+
         $this->lang->load('login/login');
         $this->load->helper('form');
     }
-    
+
     public function index() {
         // Load our view to be displayed
         // to the user
@@ -29,23 +29,19 @@ class Login extends MY_Controller {
         $result = $this->login_m->validate();
         // Now we verify the result
         if (!$result) {
-            // If user did not validate, then show them login page again
-            //$msg = '<font color=red>Invalid username and/or password.</font><br />';
-            //$this->session->set_flashdata('error', $this->lang->line('login_error'));
+            // If user did not validate,
+
             echo "0";
-            
-        } else {            
-            echo "1";
+        } else {
+
             // If user did validate, 
-            // Send them to members area
-            //redirect('dash');
+            echo "1";
         }
     }
-    
+
     public function logout() {
         $this->session->sess_destroy();
         redirect($this->index());
-        
     }
 
 }

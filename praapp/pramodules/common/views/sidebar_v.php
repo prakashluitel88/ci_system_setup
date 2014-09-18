@@ -83,7 +83,7 @@
 <!-- /.navbar-static-side -->
 <script>
     function chatWith(chatuser) {
-            alert(chatuser);
+            alert(chatuser);return false;
             createChatBox(chatuser);
             jQuery("#chatbox_"+chatuser+" .chatboxtextarea").focus();
         }

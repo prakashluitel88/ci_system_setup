@@ -7,13 +7,12 @@ if (!defined('BASEPATH'))
  *
  * @author crossover
  */
-class User_m extends CI_Model {
+class Chat_m extends CI_Model {
 
     public function __construct() {
         parent::__construct();
 
-        $this->table_user = 'prak_user';
-        $this->table_group = 'prak_user_group';
+        $this->table_user = 'chat';
     }
     
     public function create($data) {
@@ -24,12 +23,5 @@ class User_m extends CI_Model {
             return FALSE;
         }
     }
-    public function joinByGroup() {
-        $this->db->select('*');
-        $this->db->from($this->table_user);
-        $this->db->join($this->table_group,'prak_user_group.user_id = prak_user.id');
-        
-        $query = $this->db->get(); 
-        return $query->result();
-    }
+    
 }

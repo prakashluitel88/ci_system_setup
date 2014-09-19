@@ -1,6 +1,14 @@
 <script type="text/javascript">
     $( document ).ready(function(){
-        
+        originalTitle = document.title;
+	startChatSession();
+
+	jQuery([window, document]).blur(function(){
+		windowFocus = false;
+	}).focus(function(){
+		windowFocus = true;
+		document.title = originalTitle;
+	});
         
        $(document).keypress(function(e) {
             if(e.which == 13) {
@@ -30,7 +38,7 @@
         
         var username = "<?php echo $this->session->userdata('username');?>";
         //loading the ajax call in each 3 sec
-        setInterval (loadLog, 3000);
+        //setInterval (loadLog, 3000);
         
         $('#btn-chat').on('click',function(){
             var msg = $('#txt_message').val();

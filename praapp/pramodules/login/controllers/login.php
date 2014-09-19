@@ -12,6 +12,8 @@ class Login extends MY_Controller {
         parent::__construct();
 
         $this->lang->load('login/login');
+        $this->load->model('login_m');
+        
         $this->load->helper('form');
     }
 
@@ -24,7 +26,7 @@ class Login extends MY_Controller {
     public function process() {
         //redirect('dash');
         // Load the model
-        $this->load->model('login_m');
+        
         // Validate the user can login
         $result = $this->login_m->validate();
         // Now we verify the result
@@ -40,8 +42,16 @@ class Login extends MY_Controller {
     }
 
     public function logout() {
+        $login_id = $this->session->userdata('userId');
+        
+        $login_disable = $this->login_m->disablelogin($login_id);
+        if($login_disable)
+        {
         $this->session->sess_destroy();
         redirect($this->index());
+        } else {
+            redirect('dash');
+        }
     }
 
 }

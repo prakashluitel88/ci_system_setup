@@ -58,6 +58,15 @@ class Login_m extends CI_Model {
         // then return false.
         return false;
     }
+    function disablelogin($id){
+        if($id){
+        $this->db->where('id', $id);
+        $this->db->update('prak_user', array('enabled'=>'0')); 
+        return TRUE;
+        }else {
+            return FALSE;
+        }
+    }
 
 }
 

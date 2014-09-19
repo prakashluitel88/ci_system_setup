@@ -18,9 +18,10 @@ class Dash extends MY_Controller {
     }
 
     public function index() {
+        //print_r($this->session->all_userdata());die;
         $data['page_title'] = 'Dashboard';
         $data['page_view'] = 'dash/dash_v';
-                
+
         $data['chat_details'] = $this->common_m->getAll('message');
         $data['last_msg_id'] = $this->common_m->getLast('message');
         $data['user_details'] = $this->common_m->getAll('prak_user');
@@ -41,7 +42,7 @@ class Dash extends MY_Controller {
         //get the ajax input post data
         $message = $this->input->post('message');
         $post_time = $this->input->post('current_time');
-        
+
         if ($message != "") {
             $data = array('user_id' => $user_id, 'user_name' => $user_name, 'message' => $message, 'post_time' => $post_time);
 
@@ -55,17 +56,18 @@ class Dash extends MY_Controller {
 
     public function getChat() {
         $lastId = $this->input->post('last_chat_id');
-        
-        if ($lastId) {            
+
+        if ($lastId) {
             $get_data = $this->dash_m->getLatest($lastId);
         } else {
             $get_data = $this->common_m->getAll('message');
         }
-        if (!empty($get_data)) 
+        if (!empty($get_data))
             echo '1';
         else
             echo '0';
     }
 
 }
+
 ?>

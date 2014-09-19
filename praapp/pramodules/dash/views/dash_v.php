@@ -1,7 +1,8 @@
+
 <div class="chat-panel panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-comments fa-fw"></i>
-        Chat 
+        Group Chat 
         <div class="btn-group pull-right">
             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-chevron-down"></i>
@@ -122,18 +123,17 @@
             </span>
         </div>
     </div>
-    <!-- /.panel-footer -->
-    
+    <!-- /.panel-footer -->    
 </div>
-
 
 <?php $this->load->resource('dash/js/dash_r'); ?>
 <?php $this->load->resource('dash/css/dash_r'); ?>
 <style>
     .chatbox {
-        position:relative;
+        position:fixed;
 	margin-right: 10px;
-	max-width: 225px;
+	width: 225px;
+        float:right;
 }
 
 .chatboxhead {

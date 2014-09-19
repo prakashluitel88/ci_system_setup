@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2014 at 01:57 PM
+-- Generation Time: Sep 19, 2014 at 01:35 PM
 -- Server version: 5.5.36
 -- PHP Version: 5.4.27
 
@@ -23,6 +23,53 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chat`
+--
+
+CREATE TABLE IF NOT EXISTS `chat` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `from` varchar(255) NOT NULL DEFAULT '',
+  `to` varchar(255) NOT NULL DEFAULT '',
+  `message` text NOT NULL,
+  `sent` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `recd` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `to` (`to`),
+  KEY `from` (`from`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `from`, `to`, `message`, `sent`, `recd`) VALUES
+(68, 'rupesh', 'prakash', 'tst', '2014-09-19 13:34:31', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE IF NOT EXISTS `message` (
+  `message_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `user_name` varchar(64) DEFAULT NULL,
+  `message` text,
+  `post_time` varchar(55) DEFAULT NULL,
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=182 ;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`message_id`, `user_id`, `user_name`, `message`, `post_time`) VALUES
+(181, 46, 'rupesh', 'test', '5:19 PM');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `prak_group`
 --
 
@@ -31,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `prak_group` (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=94 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `prak_group`
@@ -39,81 +86,7 @@ CREATE TABLE IF NOT EXISTS `prak_group` (
 
 INSERT INTO `prak_group` (`id`, `name`, `description`) VALUES
 (4, 'admin', 'admin section of group'),
-(5, 'marketing', 'This is for Marketing section ..........'),
-(6, 'check', 'c heonaolav'),
-(7, 'dsafas', 'dfasfasdfa'),
-(8, 'sdafearatgdsa', 'asdfasdgasdfera'),
-(9, 'dahythsdvs', 'fdasfdasdfasdfasfda'),
-(10, 'thtis', 'this that'),
-(12, 'dasf', 'asdfas'),
-(13, 'sdfsaa', 'sdafasdf'),
-(19, 'sasdfas', 's'),
-(20, 'sasdfasdf', 's'),
-(21, 'sasdfasd', 's'),
-(22, 'sasdfa', 's'),
-(24, 'dsafsadfasf', 'a@a.com'),
-(25, 'aaaaaaa', 'aasfdasdfa'),
-(26, 'dasfasdf', 'dasffdsaf'),
-(27, 'dsafas', 'dasfasdfa'),
-(28, 'sadfas', 'dsafasdfas'),
-(29, 'refcdasf', 'asfasdfas'),
-(30, 'dsafasdfas', 'fdsafasdfasfas'),
-(31, 'aaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(32, 'dsafdsafasdfasdfas', 'fasdfasdfasdfa'),
-(33, 'dasfa', 'dsafasdf'),
-(34, 'aaaaaaaa', 'dasgasdfa'),
-(35, 'sadfasdfa', 'dfasasdfasdfas'),
-(36, 'dasfa', 'dasdfas'),
-(37, 'sasfdasfasasfda', 'dsafasdfasdfa'),
-(38, 'ddsafasd', 'fasdfasdfa'),
-(39, 'dsafdsafasdf', 'dsafasdfa'),
-(40, 'dsafa', 'dsafsdafa'),
-(41, 'adsafas', 'dsafas'),
-(42, 'dasfas', 'dasfasdfas'),
-(43, 'dsafsaf', 'dfsafsafasdf'),
-(44, 'dsafdsafasdf', 'dasfsadgasdfas'),
-(45, 'fdsafas', 'dfsasdfasdfa'),
-(49, 'dsfgfds', 'gsdfgsdfgs'),
-(52, 'fdsgsd', 'fdsgsdfgs'),
-(53, 'fasfdas', 'dsafasdfa'),
-(54, 'dsafsadf', 'asdfasfasf'),
-(55, 'dsafdasf', 'asfasdfas'),
-(57, 'dfsafasdfas', 'dfasfasdfas'),
-(58, 'dsafasdf', 'asdfasdfas'),
-(60, 'dsafasdfasf', 'adsafasdfas'),
-(61, 'fasdfasfd', 'dsfafas'),
-(62, 'dsafas', 'dfsaasdfasdfa'),
-(63, 'fdsafasdfdsafa', 'dsfdsafasdsafasdf'),
-(64, 'dsafsadfas', 'fdsafasdfas'),
-(65, 'adsaf', 'aasdf'),
-(66, 'aaaa', 'aaaaa'),
-(67, 'aaaa', 'sdfsfdsfsdfds'),
-(68, 'sdafdsa', 'fasdfasdfa'),
-(69, 'fsadfa', 'dfsafasdf'),
-(70, 'dfsaf', 'fdsafasdfa'),
-(71, 'afasdfasfdas', 'dfdsafasdfasdfas'),
-(72, 'dsafdsafasd', 'fasfasdfas'),
-(73, 'ddfsafsad', 'fsdafsdafasd'),
-(74, 'test', 'testetest tset '),
-(75, 'zzzz', 'zzzzzzzz zzzzz zzzz '),
-(76, 'designer', 'test desiner'),
-(77, 'testt', 'estet'),
-(78, 'gropu', 'gropup desc'),
-(79, 'gropu', 'gropup desc'),
-(80, 'test', 'testest '),
-(81, '143', '143 '),
-(82, 'easy', 'test.group'),
-(83, 'sdfdf', 'dfdfdfdfdffdfdfd'),
-(84, 'sdfdf', 'dfdfdfdfdffdfdfd'),
-(85, 'test', 'testst'),
-(86, 'testestst', 'testst'),
-(87, 'crtsdfxfgxtg', 'cfghcghchq'),
-(88, 'dfdf', 'dfdfdf'),
-(89, 'ttetet', 'tetetet'),
-(90, 'dfdf', 'dfdfd'),
-(91, 'dsfdf', 'dfdfd'),
-(92, '2222222222', 'dfdfdfdf'),
-(93, 'test', 'testt');
+(5, 'marketing', 'This is for Marketing section ..........');
 
 -- --------------------------------------------------------
 
@@ -221,49 +194,16 @@ CREATE TABLE IF NOT EXISTS `prak_role` (
   `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `user_role_FK_1` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `prak_role`
 --
 
 INSERT INTO `prak_role` (`id`, `group_id`, `name`, `description`) VALUES
-(1, 24, 'dsafdasf', 'sdfasdfasd'),
-(2, 4, 'test', 'testt'),
-(3, 4, 'aaaaa', 'aaaaaa'),
-(4, 5, 'role_marketing', 'marketing description'),
-(5, 5, 'role1_marketing', 'marketing1 description '),
-(6, 5, 'role1_marketingd', 'marketing1 descriptiond '),
-(7, 4, '1212', '121221'),
-(8, 5, 'adfdf', 'adfdf'),
-(9, 6, 'test', 'testest'),
-(10, 74, 'testt', 'estest'),
-(11, 76, 'jhelu', 'testing description '),
-(12, 4, 'testt', 'testetesttest sat ates aset asetsa taset setas taset saetast saets at'),
-(13, 6, 'sdfsdf', 'dsfdf'),
-(14, 4, 'dfasdfdf', 'sdafsdfsdf'),
-(15, 7, 'dfdfdf', 'dfdfdf'),
-(16, 19, '', ''),
-(17, 7, 'test', 'testetst'),
-(18, 7, 'testset', 'testset'),
-(19, 4, 'testst', 'testst'),
-(20, 5, 'test', 'testset'),
-(21, 5, 'test', 'testset'),
-(22, 4, 'sdfdf', 'sdfsdf'),
-(23, 4, 'sdfdf', 'sdfsdf'),
-(24, 4, 'dfsdfdf', 'dfdfdfdf'),
-(25, 4, 'dfsdfdf', 'dfdfdfdf'),
-(26, 8, 'sdsd', 'sdsdsdsd'),
-(27, 8, 'sdsd', 'sdsdsdsd'),
-(28, 4, 'jhelu', 'jhelu\r\n'),
-(29, 4, 'jhelu', 'jhelu\r\n'),
-(30, 4, 'pakacha', 'pakacha'),
-(31, 5, 'test', 'testt'),
-(32, 4, 'sdfd', 'sdfsdf'),
-(33, 4, 'asdfsdf', 'sdfsdf'),
-(34, 5, 'sdfsdf', 'dsfdf'),
-(35, 6, '', ''),
-(36, 5, 'gvbjuju', 'bygbgbuy');
+(3, 4, 'role3', 'aaaaaa'),
+(23, 4, 'role2', 'sdfsdf'),
+(29, 4, 'role1', 'jhelu\r\n');
 
 -- --------------------------------------------------------
 
@@ -286,8 +226,8 @@ CREATE TABLE IF NOT EXISTS `prak_sessions` (
 --
 
 INSERT INTO `prak_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('409d1dbb40f046c2f8da5c7bbe13b987', '::1', 'Mozilla/5.0 (Windows NT 6.2; rv:32.0) Gecko/20100101 Firefox/32.0', 1410432032, ''),
-('7df5d882af36a6923e86b9f4f0fae58a', '::1', 'Mozilla/5.0 (Windows NT 6.2; rv:32.0) Gecko/20100101 Firefox/32.0', 1410436625, 'a:5:{s:9:"user_data";s:0:"";s:6:"userid";s:2:"21";s:8:"username";s:6:"rupesh";s:5:"roles";s:1:"9";s:9:"validated";b:1;}');
+('42b6955e55fd348dccb3977a0df02e5f', '::1', 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36', 1411126488, ''),
+('8effe149c9823d2d23a44bff9baeafd4', '::1', 'Mozilla/5.0 (Windows NT 6.2; rv:32.0) Gecko/20100101 Firefox/32.0', 1411126481, '');
 
 -- --------------------------------------------------------
 
@@ -301,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `prak_user` (
   `username_canonical` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `email_canonical` varchar(255) DEFAULT NULL,
-  `enabled` tinyint(1) DEFAULT '0',
+  `enabled` tinyint(4) DEFAULT '0',
   `salt` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `last_login` datetime DEFAULT NULL,
@@ -316,19 +256,17 @@ CREATE TABLE IF NOT EXISTS `prak_user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `prak_user_U_1` (`username_canonical`),
   UNIQUE KEY `prak_user_U_2` (`email_canonical`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `prak_user`
 --
 
 INSERT INTO `prak_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `credentials_expired`, `credentials_expire_at`, `roles`) VALUES
-(21, 'rupesh', 'dsaf', 'dsafsa', 'dsafsa', 1, 'dsafsa', '6dc51c0db6d309303c48eb429b8efbb3b3c87c64f1ea2f2a8e01f1d8932aaccabcdedf623925e5259a84959c134b4cbf018f06a03e3a42b3327e67f780d40366', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '9'),
-(22, 'test', NULL, NULL, NULL, 1, NULL, 'test', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '9'),
-(23, 'hello', NULL, NULL, NULL, 1, NULL, 'hello', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '13'),
-(24, 'test', NULL, NULL, NULL, 1, NULL, '5f28fb0bf3e73fbead9742b87e4ba2e96678a5a58f666cc8b57f70c46a90f3126d6ba8053431829b80f96cc0d3813f9fe6585b819df5a7013a9343b074687e72', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4'),
-(25, 'test', NULL, NULL, NULL, 1, NULL, 'cec7502182c074bb3d0c07f50d8e284fcb9bd275c530920152bc7a37151849eca85323d911bccc3f6c28b8ce9cc14fc462537bc3b54c64b47a44365c5cff028b', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2'),
-(26, 'vhvgyvct', NULL, NULL, NULL, 1, NULL, '74582d78e43926e1107ae48eb54b7772b00759fcf222f87006905799c6482caaca0766eb6e193081d09d92b259123da2fc63aeee4aebcd1757f50f6bfc2bb0f6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '17');
+(46, 'rupesh', NULL, NULL, NULL, 0, NULL, '6dc51c0db6d309303c48eb429b8efbb3b3c87c64f1ea2f2a8e01f1d8932aaccabcdedf623925e5259a84959c134b4cbf018f06a03e3a42b3327e67f780d40366', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'roles'),
+(47, 'prakash', NULL, NULL, NULL, 0, NULL, 'cef4817824cea8cf2bb83fa3f1e81b3f8aaf4be19ad563264e36102c0c1f87204fb66bc1e5a20698ab3692c985b861dcdbaa58f13dca5af0d55c1ffb9e90f5b2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'roles'),
+(48, 'sumant', NULL, NULL, NULL, 0, NULL, 'b93c5f5c56f13709f72dd3e44d552745b627a83fd6089e6dc5a716eeea0a8d8823caf93f85bf8bb68d68fa5cfd12b5bdb999b00a43253cc9a3e27b1b5e3296be', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'roles'),
+(49, 'bijesh', NULL, NULL, NULL, 0, NULL, 'e97d1d095e8316ff0921c10614793544641137060cfb631dd0e873c278c356a41023813da61fb01329787aec1349e233ea6887eed91d8b3a94cc59adad440358', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'roles');
 
 -- --------------------------------------------------------
 
@@ -339,9 +277,21 @@ INSERT INTO `prak_user` (`id`, `username`, `username_canonical`, `email`, `email
 CREATE TABLE IF NOT EXISTS `prak_user_group` (
   `user_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
   PRIMARY KEY (`user_id`,`group_id`),
-  KEY `user_group_FI_2` (`group_id`)
+  KEY `user_group_FI_2` (`group_id`),
+  KEY `role_id` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `prak_user_group`
+--
+
+INSERT INTO `prak_user_group` (`user_id`, `group_id`, `role_id`) VALUES
+(48, 4, 3),
+(47, 4, 23),
+(46, 4, 29),
+(49, 4, 29);
 
 -- --------------------------------------------------------
 
@@ -401,7 +351,8 @@ ALTER TABLE `prak_role`
 --
 ALTER TABLE `prak_user_group`
   ADD CONSTRAINT `user_group_FK_1` FOREIGN KEY (`user_id`) REFERENCES `prak_user` (`id`),
-  ADD CONSTRAINT `user_group_FK_2` FOREIGN KEY (`group_id`) REFERENCES `prak_group` (`id`);
+  ADD CONSTRAINT `user_group_FK_2` FOREIGN KEY (`group_id`) REFERENCES `prak_group` (`id`),
+  ADD CONSTRAINT `user_role_FK_22` FOREIGN KEY (`role_id`) REFERENCES `prak_role` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

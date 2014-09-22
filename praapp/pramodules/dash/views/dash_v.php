@@ -129,11 +129,14 @@
 <?php $this->load->resource('dash/js/dash_r'); ?>
 <?php $this->load->resource('dash/css/dash_r'); ?>
 <style>
+   
+    
     .chatbox {
-        position:fixed;
+        position:absolute ;
 	margin-right: 10px;
-	width: 225px;
+	max-width: 225px;
         float:right;
+        z-index: 2;
 }
 
 .chatboxhead {
@@ -156,8 +159,8 @@
 	font-family: arial,sans-serif;
 	font-size: 13px;
 	color: #333333;
-	height:200px;
-	width:225px;
+	max-height:200px;
+	max-width:225px;
 	overflow-y:auto;
 	overflow-x:auto;
 	padding:7px;
@@ -177,8 +180,8 @@
 }
 
 .chatboxtextarea {
-	width: 206px;
-	height:44px;
+	max-width: 206px;
+	max-height:44px;
 	padding:3px 0pt 3px 3px;
 	border: 1px solid #0066FF;
 	margin: 1px;

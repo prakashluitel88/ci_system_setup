@@ -132,9 +132,9 @@
    
     
     .chatbox {
-        position:absolute ;
+        position:fixed;
 	margin-right: 10px;
-	max-width: 225px;
+	width: 225px;
         float:right;
         z-index: 2;
 }
@@ -159,8 +159,8 @@
 	font-family: arial,sans-serif;
 	font-size: 13px;
 	color: #333333;
-	max-height:200px;
-	max-width:225px;
+	height:200px;
+	width:225px;
 	overflow-y:auto;
 	overflow-x:auto;
 	padding:7px;
@@ -180,8 +180,8 @@
 }
 
 .chatboxtextarea {
-	max-width: 206px;
-	max-height:44px;
+	width: 206px;
+	height:44px;
 	padding:3px 0pt 3px 3px;
 	border: 1px solid #0066FF;
 	margin: 1px;
